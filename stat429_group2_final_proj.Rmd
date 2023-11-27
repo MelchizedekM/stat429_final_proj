@@ -12,6 +12,7 @@ author:
       - "Writing - Review & Editing"
   - name          : "Zicheng Wang"
     affiliation   : "1"
+    email         : "zw70@illinois.edu"
     role:
       - "role 3"
       - "role 4"
