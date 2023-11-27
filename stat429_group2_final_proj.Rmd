@@ -1,6 +1,6 @@
 ---
 title             : "Discover the influence of inflation on the US market"
-shorttitle        : "short title"
+shorttitle        : "Inflation and its factors"
 
 author: 
   - name          : "Ruiming Min"
