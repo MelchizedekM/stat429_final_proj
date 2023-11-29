@@ -1,6 +1,6 @@
 ---
-title             : "Discover the influence of inflation on the US market"
-shorttitle        : "Inflation and its factors"
+title             : "Discover the Influence of Econmic Variables on Inflation Rate"
+shorttitle        : "Inflation and the Economic Variables"
 
 author: 
   - name          : "Ruiming Min"
@@ -8,21 +8,25 @@ author:
     email         : "rmin4@illinois.edu"
     role: # Contributorship roles (e.g., CRediT, https://credit.niso.org/)
       - "Conceptualization"
+      - "Data curation"
+      - "Resources"
+      - "Formal Analysis"
+      - "Methodology"
       - "Writing - Original Draft Preparation"
       - "Writing - Review & Editing"
   - name          : "Zicheng Wang"
-    affiliation   : "1"
+    affiliation   : "2"
     email         : "zw70@illinois.edu"
     role:
       - "role 3"
       - "role 4"
   - name          : "Qi Yang"
-    affiliation   : "1"
+    affiliation   : "3"
     role:
       - "role 1"
       - "role 2"
   - name          : "Shumeng Zhang"
-    affiliation   : "1"
+    affiliation   : "4"
     role:
       - "role 3"
       - "role 4"
