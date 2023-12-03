@@ -28,7 +28,15 @@ diff_CPI <-  na.omit(diff(CPI))
 diff_unemp_rate <-  na.omit(diff(unemp_rate))
 t <- time(infla_rate)
 
-data <- data.frame( na.omit( ts.intersect(infla_rate, diff_infla_rate,CPI, diff_CPI, t,unemp_rate, diff_unemp_rate, grove_exp, invest, consump_real)))
+sin_1 <- ts(sin(2*pi*(t-1959)/40),start = c(1948, 1), frequency = 4)
+sin_2 <- ts(sin(2*pi*(t-1980)/24),start = c(1948, 1), frequency = 4)
+sin_3 <- ts(sin(2*pi*(t-1980)/48),start = c(1948, 1), frequency = 4)
+
+CPI_lag1 <- lag(CPI, -1)
+CPI_lag2 <- lag(CPI, -2)
+CPI_lag3 <- lag(CPI, -3)
+
+data <- data.frame( na.omit( ts.intersect(infla_rate,CPI, diff_CPI,CPI_lag1,CPI_lag2, CPI_lag3, t, sin_1, sin_2,sin_3, unemp_rate, diff_unemp_rate, grove_exp, invest, consump_real)))
 
 # model 0
 
@@ -54,7 +62,6 @@ if(nrow(data) > 1) {
   # If data has only one row or none, print a message
   cat("Data frame 'data' has less than two rows.")
 }
-
 
 
 # model 1
@@ -104,9 +111,6 @@ ggplot(data, aes(x = t)) +
 acf(model_1$residuals)
 
 # model 1.1
-
-sin_1 <- sin(2*pi*(data[,'t']-1959)/40)
-
 model_1.1 <- lm(CPI ~ I(1.08^(t-1971)) + I((t-1951)^2) + I(exp(unemp_rate))  + consump_real + sin_1 + invest + grove_exp, data = data)
 summary(model_1.1)
 
@@ -138,20 +142,18 @@ ggplot(data, aes(x = t)) +
 
 acf(model_1.1$residuals)
 
+
 # model 1.2
-
-sin_2 <- sin(2*pi*(data[,'t']-1980)/24)
-
-model_1.2 <- lm(CPI ~ I(1.08^(t-1971)) + I((t-1951)^2) + I(exp(unemp_rate))  + consump_real + sin_1 + sin_2 + invest , data = data)
+model_1.2 <- lm(CPI ~ I(1.08^(t-1971)) + I((t-1951)^2) + I(exp(unemp_rate))  + consump_real + sin_1 + sin_2 + invest , data = data[ 1:(length(data[,'t'])-5),])
 summary(model_1.2)
 
 fitted_CPI_1.2 <- fitted(model_1.2)
 
 if(nrow(data) > 1) {
   # Check the lengths of the vectors
-  if(length(data[,'CPI']) == length(fitted_CPI_1.2)) {
+  if(length(data[1:(length(data[,'t'])-5),'CPI']) == length(fitted_CPI_1.2)) {
     # If they match, plot the graph
-    ggplot(data, aes(x = t, y = CPI)) + 
+    ggplot(data[1:(length(data[,'t'])-5),], aes(x = t, y = CPI)) + 
       geom_line(color = "blue") +
       geom_line(aes(y = fitted_CPI_1.2), color = "red") +
       labs(title = "Inflation rate and fitted values", x = "Year", y = "Inflation rate") +
@@ -166,13 +168,67 @@ if(nrow(data) > 1) {
 }
 
 # plot the residuals
-ggplot(data, aes(x = t)) + 
+ggplot(data[1:(length(data[,'t'])-5),], aes(x = t)) + 
   geom_line(aes(y = (resid(model_1.2))), color = "blue") +
   labs(title = "Residuals", x = "Year", y = "Residuals") +
   theme(plot.title = element_text(hjust = 0.5))
 
 acf(model_1.2$residuals)
 
+pre_1.2 <- predict(model_1.2, newdata = data[(length(data[,'t'])-4):length(data[,'t']),])
+pre_1.2
+data[(length(data[,'t'])-4):length(data[,'t']),'CPI']
+
+test_error_1.2 <- mean(data[(length(data[,'t'])-4):length(data[,'t']),'CPI'] - pre_1.2)
+test_error_1.2/mean(data[(length(data[,'t'])-4):length(data[,'t']),'CPI'])
+
+# model 1.3
+
+model_1.3 <- lm(CPI ~ I(1.08^(t-1971))  + I((unemp_rate))  + consump_real + sin_1 + CPI_lag1 + CPI_lag2  + invest , data = data[ 1:(length(data[,'t'])-5),])
+summary(model_1.3)
+
+fitted_CPI_1.3 <- fitted(model_1.3)
+
+if(nrow(data) > 1) {
+  # Check the lengths of the vectors
+  if(length(data[ 1:(length(data[,'t'])-5),'CPI']) == length(fitted_CPI_1.3)) {
+    # If they match, plot the graph
+    ggplot(data[ 1:(length(data[,'t'])-5),], aes(x = t, y = CPI)) + 
+      geom_line(color = "blue") +
+      geom_line(aes(y = fitted_CPI_1.3), color = "red") +
+      labs(title = "Inflation rate and fitted values", x = "Year", y = "Inflation rate") +
+      theme(plot.title = element_text(hjust = 0.5))
+  } else {
+    # If lengths don't match, print a message
+    cat("Length of 'infla_rate' and 'fitted_infla_rate' do not match.")
+  }
+} else {
+  # If data has only one row or none, print a message
+  cat("Data frame 'data' has less than two rows.")
+}
+
+# plot the residuals
+ggplot(data[ 1:(length(data[,'t'])-5),], aes(x = t)) + 
+  geom_line(aes(y = (resid(model_1.3))), color = "blue") +
+  labs(title = "Residuals", x = "Year", y = "Residuals") +
+  theme(plot.title = element_text(hjust = 0.5))
+
+
+acf(model_1.3$residuals,lag = 200)
+
+pre_1.3 <- predict(model_1.3, newdata = data[(length(data[,'t'])-4):length(data[,'t']),])
+pre_1.3
+data[(length(data[,'t'])-4):length(data[,'t']),'CPI']
+
+test_error_1.3 <- sqrt(mean((data[(length(data[,'t'])-4):length(data[,'t']),'CPI'] - pre_1.3)^2))
+test_error_1.3/mean(data[(length(data[,'t'])-4):length(data[,'t']),'CPI'])
+
+
+# AIC and BIC
+
+
+AIC(model_1, model_1.1, model_1.2, model_1.3)
+BIC(model_1, model_1.1, model_1.2, model_1.3)
 
 # model 2
 model_2 <- lm(infla_rate ~ t + unemp_rate + grove_exp  + consump_real + invest, data = data)
@@ -281,5 +337,6 @@ if(length(fitted_values) > 0) {
 
 # model 5
 
-model_5 <- lm(diff_CPI ~ I(1.01^(t)) + unemp_rate + grove_exp  + consump_real + invest, data = data)
 summary(model_5)
+
+plot(data[,'t'], data[,'diff_CPI'], type = "l", col = "blue", xlab = "Year", ylab = "Inflation rate")
