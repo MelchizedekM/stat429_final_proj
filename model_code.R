@@ -22,7 +22,7 @@ unemp_rate <-  na.omit(ts(unemp_rate[,2], start = c(1948, 1), frequency = 4))
 grove_exp <-  na.omit(ts(grove_exp[,2], start = c(1948, 1), frequency = 4))
 invest <-  na.omit(ts(invest[,2], start = c(1948, 1), frequency = 4))
 consump_no <-  na.omit(ts(consump_no[,2], start = c(2007, 1), frequency = 4))
-consump_real <-  na.omit(ts(consump_real[,2], start = c(1971, 1), frequency = 4))
+consump_real <-  na.omit(ts(consump_real[,2], start = c(1959, 1), frequency = 4))
 diff_infla_rate <-  na.omit(diff(infla_rate))
 diff_CPI <-  na.omit(diff(CPI))
 diff_unemp_rate <-  na.omit(diff(unemp_rate))
@@ -30,7 +30,36 @@ t <- time(infla_rate)
 
 data <- data.frame( na.omit( ts.intersect(infla_rate, diff_infla_rate,CPI, diff_CPI, t,unemp_rate, diff_unemp_rate, grove_exp, invest, consump_real)))
 
-model_1 <- lm(CPI ~ I(1.01^(t-1971)) + I(exp(unemp_rate)) + grove_exp  + consump_real, data = data)
+# model 0
+
+model_0 <- lm(CPI ~ I(1.08^t), data = data)
+summary(model_0)
+
+fitted_CPI_0 <- fitted(model_0)
+
+if(nrow(data) > 1) {
+  # Check the lengths of the vectors
+  if(length(data[,'CPI']) == length(fitted_CPI_0)) {
+    # If they match, plot the graph
+    ggplot(data, aes(x = t, y = CPI)) + 
+      geom_line(color = "blue") +
+      geom_line(aes(y = fitted_CPI_0), color = "red") +
+      labs(title = "Inflation rate and fitted values", x = "Year", y = "Inflation rate") +
+      theme(plot.title = element_text(hjust = 0.5))
+  } else {
+    # If lengths don't match, print a message
+    cat("Length of 'infla_rate' and 'fitted_infla_rate' do not match.")
+  }
+} else {
+  # If data has only one row or none, print a message
+  cat("Data frame 'data' has less than two rows.")
+}
+
+
+
+# model 1
+
+model_1 <- lm(CPI ~ I(1.08^(t-1971)) + I((t-1951)^2) + I(unemp_rate)  + consump_real, data = data)
 summary(model_1)
 
 # using the fitted CPI to calculate the inflation rate
@@ -68,10 +97,81 @@ ggplot(data, aes(x = t)) +
 
 # plot the residuals
 ggplot(data, aes(x = t)) + 
-  geom_line(aes(y = (resid(model_1))/data[,"CPI"]), color = "blue") +
+  geom_line(aes(y = (resid(model_1))), color = "blue") +
   labs(title = "Residuals", x = "Year", y = "Residuals") +
   theme(plot.title = element_text(hjust = 0.5))
 
+acf(model_1$residuals)
+
+# model 1.1
+
+sin_1 <- sin(2*pi*(data[,'t']-1959)/40)
+
+model_1.1 <- lm(CPI ~ I(1.08^(t-1971)) + I((t-1951)^2) + I(exp(unemp_rate))  + consump_real + sin_1 + invest + grove_exp, data = data)
+summary(model_1.1)
+
+fitted_CPI_1.1 <- fitted(model_1.1)
+
+if(nrow(data) > 1) {
+  # Check the lengths of the vectors
+  if(length(data[,'CPI']) == length(fitted_CPI_1.1)) {
+    # If they match, plot the graph
+    ggplot(data, aes(x = t, y = CPI)) + 
+      geom_line(color = "blue") +
+      geom_line(aes(y = fitted_CPI_1.1), color = "red") +
+      labs(title = "Inflation rate and fitted values", x = "Year", y = "Inflation rate") +
+      theme(plot.title = element_text(hjust = 0.5))
+  } else {
+    # If lengths don't match, print a message
+    cat("Length of 'infla_rate' and 'fitted_infla_rate' do not match.")
+  }
+} else {
+  # If data has only one row or none, print a message
+  cat("Data frame 'data' has less than two rows.")
+}
+
+# plot the residuals
+ggplot(data, aes(x = t)) + 
+  geom_line(aes(y = (resid(model_1.1))), color = "blue") +
+  labs(title = "Residuals", x = "Year", y = "Residuals") +
+  theme(plot.title = element_text(hjust = 0.5))
+
+acf(model_1.1$residuals)
+
+# model 1.2
+
+sin_2 <- sin(2*pi*(data[,'t']-1980)/24)
+
+model_1.2 <- lm(CPI ~ I(1.08^(t-1971)) + I((t-1951)^2) + I(exp(unemp_rate))  + consump_real + sin_1 + sin_2 + invest , data = data)
+summary(model_1.2)
+
+fitted_CPI_1.2 <- fitted(model_1.2)
+
+if(nrow(data) > 1) {
+  # Check the lengths of the vectors
+  if(length(data[,'CPI']) == length(fitted_CPI_1.2)) {
+    # If they match, plot the graph
+    ggplot(data, aes(x = t, y = CPI)) + 
+      geom_line(color = "blue") +
+      geom_line(aes(y = fitted_CPI_1.2), color = "red") +
+      labs(title = "Inflation rate and fitted values", x = "Year", y = "Inflation rate") +
+      theme(plot.title = element_text(hjust = 0.5))
+  } else {
+    # If lengths don't match, print a message
+    cat("Length of 'infla_rate' and 'fitted_infla_rate' do not match.")
+  }
+} else {
+  # If data has only one row or none, print a message
+  cat("Data frame 'data' has less than two rows.")
+}
+
+# plot the residuals
+ggplot(data, aes(x = t)) + 
+  geom_line(aes(y = (resid(model_1.2))), color = "blue") +
+  labs(title = "Residuals", x = "Year", y = "Residuals") +
+  theme(plot.title = element_text(hjust = 0.5))
+
+acf(model_1.2$residuals)
 
 
 # model 2
@@ -179,3 +279,7 @@ if(length(fitted_values) > 0) {
 }
 
 
+# model 5
+
+model_5 <- lm(diff_CPI ~ I(1.01^(t)) + unemp_rate + grove_exp  + consump_real + invest, data = data)
+summary(model_5)
