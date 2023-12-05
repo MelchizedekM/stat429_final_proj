@@ -215,7 +215,7 @@ So we add some economic variables to the model to regress the final model.
 Also, we add the sine functions of time to the model to fit the seasonal effect of the business cycle.
 
 
-According to the nature of CPI, $CPI(t) = \frac{\sum_{i \in \mathcal{P}} P_{i,t} Q_i}{\sum_{i \in \mathcal{P}} P_{i,0} Q_i}$, where $\mathcal{P}$ is the set of all goods and services, $P_{i,t}$ is the price of good or service $i$ at time $t$, and $Q_i$ is the quantity of good or service $i$ at the base period. 
+According to the nature of CPI [@blanchard2004macroeconomics], $CPI(t) = \frac{\sum_{i \in \mathcal{P}} P_{i,t} Q_i}{\sum_{i \in \mathcal{P}} P_{i,0} Q_i}$, where $\mathcal{P}$ is the set of all goods and services, $P_{i,t}$ is the price of good or service $i$ at time $t$, and $Q_i$ is the quantity of good or service $i$ at the base period. 
 Since the Wage-Setting Relation, $W = \mathcal{A} P^e F(u,z)$, where $W$ is the nominal wage, $\mathcal{A}$ is the price mark-up, $F(u,z)$ is the function of unemployment rate and other variables, $u$ is the unemployment rate, and z is the output(GDP), and the Price-Setting Relation, $P = (1+m)\frac{W}{\mathcal{A}}$, where $m$ is the desired mark-up,
 it is concluded as 
 $$CPI(t) = \frac{\sum_{i \in \mathcal{P}} (1+m_i) \frac{W_i}{\mathcal{A}} Q_i}{\sum_{i \in \mathcal{P}} P_{i,0} Q_i} = \frac{\sum_{i \in \mathcal{P}} (1+m_i) P_{i,t}^e F(u,z) Q_i}{\sum_{i \in \mathcal{P}} P_{i,0} Q_i}$$.
