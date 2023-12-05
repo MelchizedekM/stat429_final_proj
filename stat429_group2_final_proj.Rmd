@@ -1,7 +1,35 @@
 ---
-title             : "Discover the Influence of Econmic Variables on Inflation Rate"
-shorttitle        : "Inflation and the Economic Variables"
-
+title             : "Discover the Influence of Econmic Variables on CPI"
+shorttitle        : "CPI and the Economic Variables"
+header-includes:
+  - \usepackage{array}
+  - \usepackage{colortbl}
+  - \usepackage{multirow}
+  - \usepackage{wrapfig}
+  - \usepackage{booktabs} 
+  - \usepackage{siunitx} 
+  - \usepackage{pdflscape}
+  - \usepackage{tabularx} 
+  - \usepackage{lipsum} 
+  - \usepackage{geometry}
+  - \usepackage{amsmath}
+  - \usepackage{amssymb}
+  - \usepackage{babel}
+  - \usepackage{geometry}
+  - \usepackage{amsmath}
+  - \usepackage{amsthm}
+  - \usepackage{framed}
+  - \usepackage{pifont}
+  - \usepackage{listings}
+  - \usepackage{tikz}
+  - \usepackage{hyperref}
+  - \usepackage{float}
+  - \usepackage{paralist}
+  - \usepackage{xcolor}
+  - \usepackage{tikz}
+  - \usepackage{siunitx}
+  - \usepackage{float} 
+  - \newenvironment{smalltable}{\begin{table}[H]\footnotesize}{\end{table}}
 author: 
   - name          : "Ruiming Min"
     affiliation   : "1"
@@ -61,13 +89,67 @@ tablelist         : no
 footnotelist      : no
 
 classoption       : "man"
-output            : papaja::apa6_pdf
+output            : 
+    papaja::apa6_pdf:
+      keep_tex: yes
+      extra_dependencies: ["booktabs", "caption"]
+      citation_package: biblatex
+      latex_engine: xelatex
+      pandoc_args: [
+      "--variable", "classoption=man,floatsintext",
+      ]
 ---
 
 ```{r setup, include = FALSE}
+if (!require('this.path')) install.packages('this.path')
+if (!require('readxl')) install.packages("readxl")
+if (!require('ggplot2')) install.packages("ggplot2")
+if (!require('papaja')) install.packages("papaja")
+if (!require('astsa')) install.packages("astsa")
+if (!require('knitr')) install.packages("knitr")
+if (!require('kableExtra')) install.packages("kableExtra")
+
+library(knitr)
+library("this.path")
+library("readxl")
+library("ggplot2")
 library("papaja")
 r_refs("r-references.bib")
 library("astsa")
+library(knitr)
+library(kableExtra)
+
+# Read in the data
+curdir <- dirname(this.path())
+infla_rate_CPI <- read_excel(paste0(curdir, "/data/inflation_rate.xlsx"))
+unemp_rate <- read_excel(paste0(curdir, "/data/unemploy_rate.xls"))
+grove_exp <- read_excel(paste0(curdir, "/data/Grov_exp.xls"))
+invest <- read_excel(paste0(curdir, "/data/invest_real.xls"))
+consump_real <- read_excel(paste0(curdir, "/data/PCE.xls"))
+
+# Clean the data
+CPI <-  na.omit(ts(infla_rate_CPI[,2], start = c(1948, 1), frequency = 4))
+unemp_rate <-  na.omit(ts(unemp_rate[,2], start = c(1948, 1), frequency = 4))
+grove_exp <-  na.omit(ts(grove_exp[,2], start = c(1948, 1), frequency = 4))
+invest <-  na.omit(ts(invest[,2], start = c(1948, 1), frequency = 4))
+consump_real <-  na.omit(ts(consump_real[,2], start = c(1959, 1), frequency = 4))
+t <- time(CPI)
+
+sin_1 <- ts(sin(2*pi*(t-1959)/40),start = c(1948, 1), frequency = 4)
+sin_2 <- ts(sin(2*pi*(t-1980)/24),start = c(1948, 1), frequency = 4)
+sin_3 <- ts(sin(2*pi*(t-1980)/48),start = c(1948, 1), frequency = 4)
+
+CPI_lag1 <- lag(CPI, -1)
+CPI_lag2 <- lag(CPI, -2)
+CPI_lag3 <- lag(CPI, -3)
+
+# Combine the data
+data <- data.frame( na.omit( ts.intersect( CPI, CPI_lag1,CPI_lag2, CPI_lag3, t, sin_1, sin_2,sin_3, unemp_rate, grove_exp, invest, consump_real)))
+colnames(data) <- c("CPI", "CPI_lag1", "CPI_lag2", "CPI_lag3", "t", "sin_1", "sin_2", "sin_3", "unemp_rate", "grove_exp", "invest", "consump_real")
+
+# Split the data into training and testing
+train <- data[1:(nrow(data)-5),]
+test <- data[(nrow(data)-4):nrow(data),]
 ```
 
 ```{r analysis-preferences}
@@ -88,34 +170,145 @@ citation within parenthesis [@tsa4]
 
 # Methods
 
-A discussion and justification of the methods you have used to analyze the data and how you went about analyzing the data. Don't forget to describe in some detail how and why the particular model was selected.
+To address the problem at hand, we used the following three steps to analyze the data: 1. detrending, 2. lag analysis, 3. adding the economic variables.
 
+## Detrending 
+Observating the original data, we could see that the CPI has a exponential trend. So we first use a exponential model to fit the data. Moreover, according to the nature of the CPI, which is highly related to inflation rate, we choose 1.05 as the base of the exponential model.
+  
+```{r, echo=FALSE,results='hide'}
+detrend_model <- lm(CPI ~ I(1.05^t), data = train)
 
-Do not include the R code inside the report unless it is absolutely necessary. If you think a code is absolutely important, you can create an additional section at the end of the report (Appendix) and print all the codes there (not the output). In the main report, keep important and relevant results only.
-
-Don't do this
-
-```{r,echo=TRUE}
-acf1(soi)
+par(mfrow = c(1, 2))
+plot(CPI ~ t, data = train, col = 'black' , type = 'l', main = "CPI vs. Time")
+plot(CPI ~ t, data = train, col = 'black' , type = 'l' ,main = "CPI and trend vs. Time")
+lines(train$t, predict(detrend_model), col = "red")
 ```
 
-Don't do this (unless you really want to print out the values)
+## Lag Analysis
 
-```{r, echo=FALSE}
-acf1(soi)
-```
-
-But do this
+After detrending, we use PACF to figure out weather or not the data has lags. From the plot below, we could see that the data has one lags. Then, we improve our model by adding the first oreder lag of CPI to the model. 
 
 ```{r, echo=FALSE,results='hide'}
-acf1(soi)
+par(mfrow = c(1, 2))
+plot(detrend_model$residuals, type = 'l', main = "Residuals of detrending model vs. Time")
+pacf(detrend_model$residuals, main = "PACF of Residuals of detrending model")
 ```
 
-## Subsection title
+## Adding the economic variables
 
-If you want to put any additional subsection, you may use this style.
+After the detrending and adding the first order lag of CPI, the time series of CPI, $\{CPI(t)\}$, has became $CPI(t) = T(t) + CPI(t-1) + Y_t$.
+
+```{r, echo=FALSE,results='hide'}
+par(mfrow = c(1, 2))
+model_1 <- lm(CPI ~ I(1.05^t) + CPI_lag1, data = train)
+plot(model_1$residuals ~ t, data = train, col = 'black' , type = 'l', main = "Y_t vs. Time")
+plot(model_1$residuals/train[,'CPI'] ~ t, data = train, col = 'black' , type = 'l', main = "Y_t/CPI vs. Time")
+```
+
+The plot above shows that $Y_t$ still dose not behave like a white noise.
+Additionally, the significant depressions at 2008 and 2020 and the significant peak at 1979 reflexed the influence of the economic crisis[@gross2019iran] [@williams2010uncontrolled] [@forbes_2019_strange_new_world]. 
+So we add some economic variables to the model to regress the final model. 
+Also, we add the sine functions of time to the model to fit the seasonal effect of the business cycle.
+
+
+According to the nature of CPI, we could know that $CPI(t) = \frac{\sum_{i \in \mathcal{P}} P_{i,t} Q_i}{\sum_{i \in \mathcal{P}} P_{i,0} Q_i}$, where $\mathcal{P}$ is the set of all goods and services, $P_{i,t}$ is the price of good or service $i$ at time $t$, and $Q_i$ is the quantity of good or service $i$ at the base period. 
+Since the Wage-Setting Relation, $W = \mathcal{A} P^e F(u,z)$, where $W$ is the nominal wage, $\mathcal{A}$ is the price mark-up, $F(u,z)$ is the function of unemployment rate and other variables, $u$ is the unemployment rate, and z is the output(GDP), and the Price-Setting Relation, $P = (1+m)\frac{W}{\mathcal{A}}$, where $m$ is the desired mark-up,
+we could know that 
+$$CPI(t) = \frac{\sum_{i \in \mathcal{P}} (1+m_i) \frac{W_i}{\mathcal{A}} Q_i}{\sum_{i \in \mathcal{P}} P_{i,0} Q_i} = \frac{\sum_{i \in \mathcal{P}} (1+m_i) P_{i,t}^e F(u,z) Q_i}{\sum_{i \in \mathcal{P}} P_{i,0} Q_i}$$.
+
+To simplify the formular, we assume $m_i = m \,\, \forall i$ and $P_{i,t}^e = P_{i,t-1}$, we get $CPI(t) = CPI(t-1) (1+m) F(u,z)$.
+By the assumption of $m$ is small and $F(u,z) = 1 - \alpha u + \beta z$, we get $CPI(t) = CPI(t-1) (1+m) (1 - \alpha u + \beta z)$ $\cong CPI(t-1) ( 1 + m - \alpha u - \beta z)$.
+We could conclude $Y_t = CPI(t) - CPI(t-1)$ $=CPI(t-1)( m - \alpha u + \beta z)$.
+For easy-computation, we assume CPI(t-1) is a constent in the cross term, we get $Y_t = M - \mathcal{A} u + \mathcal{B} z$.
+Therefore we add the unemployment rate, the real consumption, real grovement spending, and the real investment to the model.
+
+To summarize the model, we get the final model as follows:
+
+\begin{align*}
+CPI(t) =& a_0 + a_1 \cdot 1.05^t + a_2 CPI(t-1)  && (\text{trend and lags})\\
+& + a_3 \sin\left(\frac{2\pi(t-1959)}{40}\right) + a_4 \sin\left(\frac{2\pi(t-1980)}{24}\right) + a_5 \sin\left(\frac{2\pi(t-1980)}{48}\right) && (\text{business cycle})\\
+& + b_1 C_t + b_2 u_t + b_3 G_t + b_4 I_t + W_t && (\text{economic variables})
+\end{align*}
+
+
+where $W_t$ is a white noise.
 
 # Results
+
+## Fitting Results
+
+The fitted result of the model is shown below. The plot shows that the model fits the data well. 
+
+\begin{smalltable}
+    \centering
+    \begin{tabular}{
+      l
+      S
+      S[table-format=3.4]
+      S[table-format=2.3]
+      S[table-format=1.4e-2]
+    }
+    \toprule
+    {Coefficients} & {Estimate} & {Std. Error} & {t value} & {Pr(>|t|)}  \\
+    \midrule
+(Intercept) & 2.159e+00 & 4.662e-01 & 4.632 & 5.90e-06  \\
+I(1.05\textasciicircum t) & -8.779e-42 & 1.245e-42 & -7.050 & 1.83e-11\\
+sin\_1 & -3.881e+00 & 6.540e-01 & -5.934 & 1.01e-08\\
+sin\_2 & -1.028e+00 & 1.593e-01 & -6.455 & 5.80e-10 \\
+sin\_3 & -3.760e+00 & 9.484e-01 & -3.965 & 9.66e-05  \\
+CPI\_lag1 & 9.735e-01 & 1.351e-02 & 72.033 & < 2e-16  \\
+unemp\_rate & 1.847e-01 & 5.406e-02 & 3.416 & 0.000745  \\
+grove\_exp & 6.250e-04 & 2.178e-04 & 2.870 & 0.004470  \\
+invest & 7.797e-04 & 3.737e-04 & 2.087 & 0.037966  \\
+consump\_real & 3.423e-03 & 3.337e-04 & 10.259 & < 2e-16 \\
+    \bottomrule
+\end{tabular}
+\end{smalltable}
+
+\[
+\begin{aligned}
+&\text{Residual standard error: 0.8011 on 244 degrees of freedom} \\
+&\text{Multiple R-squared: 0.9999, Adjusted R-squared: 0.9999} \\
+&\text{F-statistic: 2.688e+05 on 9 and 244 DF, p-value: < 2.2e-16}
+\end{aligned}
+\]
+
+
+
+```{r, results='asis', echo=FALSE}
+model_1.1 <- lm(CPI ~ I(1.05^t) + sin_1 + sin_2+sin_3 + CPI_lag1 + unemp_rate + grove_exp + invest + consump_real, data = train)
+plot(train[,'t'],fitted(model_1.1),  col = 'black' , type = 'l', main = "Fitted CPI & real CPI vs. Time", xlab="Time", ylab="CPI")
+lines(train[,'t'],train[,'CPI'],type = 'h' ,col = "red")
+legend("topleft", legend=c("Fitted CPI", "Real CPI"), col=c("blue", "red"), lty=1:1, cex=0.8)
+```
+
+
+
+```{r, echo=FALSE,results='hide'}
+par(mfrow = c(1, 2))
+plot(model_1.1$residuals ~ t, data = train, col = 'black' , type = 'l', main = "Residuals vs. Time")
+acf(model_1.1$residuals, main = "PACF of Residuals of final model", lag.max = 200)
+```
+
+We can find althought there are still a depression at 2010 but the residuals of the final model seem like a white noise at other point. 
+And the ACF plot shows that most of thecorrelation of residuals are with in the confident interval. 
+
+## Forecasting Results
+
+The forecasting result of the model is shown below. The plot shows that the model fits the data well.
+  
+```{r, echo=FALSE,results='hide'}
+pred <- predict(model_1.1, newdata = test)
+error <- (test[,'CPI'] - pred) / test[,'CPI']
+plot(test[,'t'],error, col = 'black' , type = 'l', main = "Precnet of Predict Error vs. Time", xlab="Time", ylab="CPI")
+```
+
+```{r, echo=FALSE, results='asis', comment=NA}
+cat(sprintf("And the mean square error of the model is %e", mean(error^2)))
+```
+
+### rest
+
 
 A presentation of the results of your analysis. Interpretations should include a discussion of statistical versus practical import of the results.
 

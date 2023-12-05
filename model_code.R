@@ -216,7 +216,7 @@ test_error_1.2/mean(data[(length(data[,'t'])-4):length(data[,'t']),'CPI'])
 
 # model 1.3
 
-model_1.3 <- lm(CPI ~ I(1.08^(t-1951))  + I((unemp_rate))  + (consump_real+ invest) + sin_1 + CPI_lag1  , data = data[ 1:(length(data[,'t'])-5),])
+model_1.3 <- lm(CPI ~ I(1.05^(t-1951))  + I((unemp_rate))  + (consump_real+ invest) + sin_1 + CPI_lag1  , data = data[ 1:(length(data[,'t'])-5),])
 summary(model_1.3)
 
 fitted_CPI_1.3 <- fitted(model_1.3)
@@ -254,6 +254,57 @@ data[(length(data[,'t'])-4):length(data[,'t']),'CPI']
 
 test_error_1.3 <- sqrt(mean((data[(length(data[,'t'])-4):length(data[,'t']),'CPI'] - pre_1.3)^2))
 test_error_1.3/mean(data[(length(data[,'t'])-4):length(data[,'t']),'CPI'])
+
+# caculate the inflation rate
+fitted_infla_rate_1.3 <- diff(fitted_CPI_1.3)/fitted_CPI_1.3[-length(fitted_CPI_1.3)]
+
+# plot the fitted inflation rate and the real inflation rate
+if(nrow(data) > 1) {
+  # Check the lengths of the vectors
+  if(length(data[ 1:(length(data[,'t'])-6),'infla_rate']) == length(fitted_infla_rate_1.3)) {
+    # If they match, plot the graph
+    ggplot(data[ 1:(length(data[,'t'])-6),], aes(x = t, y = infla_rate)) + 
+      geom_line(color = "blue") +
+      geom_line(aes(y = fitted_infla_rate_1.3), color = "red") +
+      labs(title = "Inflation rate and fitted values", x = "Year", y = "Inflation rate") +
+      theme(plot.title = element_text(hjust = 0.5))
+  } else {
+    # If lengths don't match, print a message
+    cat("Length of 'infla_rate' and 'fitted_infla_rate' do not match.")
+  }
+} else {
+  # If data has only one row or none, print a message
+  cat("Data frame 'data' has less than two rows.")
+}
+
+# predict the inflation rate
+pre_infla_rate_1.3 <- diff(pre_1.3)/pre_1.3[-length(pre_1.3)]
+
+# plot the predicted inflation rate and the real inflation rate
+if(nrow(data) > 1) {
+  # Check the lengths of the vectors
+  if(length(data[(length(data[,'t'])-4):(length(data[,'t'])-1),'infla_rate']) == length(pre_infla_rate_1.3)) {
+    # If they match, plot the graph
+    ggplot(data[(length(data[,'t'])-4):(length(data[,'t'])-1),], aes(x = t, y = infla_rate)) + 
+      geom_line(color = "blue") +
+      geom_line(aes(y = pre_infla_rate_1.3), color = "red") +
+      labs(title = "Inflation rate and predicted values", x = "Year", y = "Inflation rate") +
+      theme(plot.title = element_text(hjust = 0.5))
+  } else {
+    # If lengths don't match, print a message
+    cat("Length of 'infla_rate' and 'pre_infla_rate_1.3' do not match.")
+  }
+} else {
+  # If data has only one row or none, print a message
+  cat("Data frame 'data' has less than two rows.")
+}
+
+# test error
+pre_infla_rate_1.3
+data[(length(data[,'t'])-4):(length(data[,'t'])-1),'infla_rate']
+test_error_1.3 <- sqrt(mean((data[(length(data[,'t'])-4):(length(data[,'t'])-1),'infla_rate'] - pre_infla_rate_1.3)^2))
+test_error_1.3/mean(data[(length(data[,'t'])-4):(length(data[,'t'])-1),'infla_rate'])
+
 
 
 # AIC and BIC
