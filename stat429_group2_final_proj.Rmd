@@ -195,7 +195,7 @@ and we improve our model by adding the first oreder lag of CPI to the model.
 ```{r, echo=FALSE,results='hide'}
 par(mfrow = c(1, 2))
 plot(detrend_model$residuals, type = 'l', main = "Residuals of detrending model vs. Time", xlab="Time", ylab="Residuals")
-pacf(detrend_model$residuals, main = "PACF of Residuals of detrending model", lag.max = 200, xlabs = "Lags")
+pacf(detrend_model$residuals, main = "PACF of Residuals of detrending model", lag.max = 200)
 ```
 
 ## Adding the economic variables
