@@ -173,7 +173,8 @@ citation within parenthesis [@tsa4]
 To address the problem at hand, we used the following three steps to analyze the data: 1. detrending, 2. lag analysis, 3. adding the economic variables.
 
 ## Detrending 
-Observating the original data, we could see that the CPI has a exponential trend. So we first use a exponential model to fit the data. Moreover, according to the nature of the CPI, which is highly related to inflation rate, we choose 1.05 as the base of the exponential model.
+Observating the original data, the CPI has a significantly exponential trend. So we first use a exponential model to fit the data. 
+Moreover, according to the nature of the CPI, which is highly related to inflation rate, and the avarage of inflation rate, we choose 1.05 as the base of the exponential model.
   
 ```{r, echo=FALSE,results='hide'}
 detrend_model <- lm(CPI ~ I(1.05^t), data = train)
@@ -186,12 +187,15 @@ lines(train$t, predict(detrend_model), col = "red")
 
 ## Lag Analysis
 
-After detrending, we use PACF to figure out weather or not the data has lags. From the plot below, we could see that the data has one lags. Then, we improve our model by adding the first oreder lag of CPI to the model. 
+After detrending, we use PACF to figure out weather or not the data has lags. 
+From the plot below, the data has one lags.
+Therefore, the CPI may be a AR(1) process
+and we improve our model by adding the first oreder lag of CPI to the model. 
 
 ```{r, echo=FALSE,results='hide'}
 par(mfrow = c(1, 2))
-plot(detrend_model$residuals, type = 'l', main = "Residuals of detrending model vs. Time")
-pacf(detrend_model$residuals, main = "PACF of Residuals of detrending model")
+plot(detrend_model$residuals, type = 'l', main = "Residuals of detrending model vs. Time", xlab="Time", ylab="Residuals")
+pacf(detrend_model$residuals, main = "PACF of Residuals of detrending model", lag.max = 200, xlabs = "Lags")
 ```
 
 ## Adding the economic variables
@@ -201,8 +205,8 @@ After the detrending and adding the first order lag of CPI, the time series of C
 ```{r, echo=FALSE,results='hide'}
 par(mfrow = c(1, 2))
 model_1 <- lm(CPI ~ I(1.05^t) + CPI_lag1, data = train)
-plot(model_1$residuals ~ t, data = train, col = 'black' , type = 'l', main = "Y_t vs. Time")
-plot(model_1$residuals/train[,'CPI'] ~ t, data = train, col = 'black' , type = 'l', main = "Y_t/CPI vs. Time")
+plot(model_1$residuals ~ t, data = train, col = 'black' , type = 'l', main = "Y_t vs. Time", xlab="Time", ylab="Y_t")
+plot(model_1$residuals/train[,'CPI'] ~ t, data = train, col = 'black' , type = 'l', main = "Y_t/CPI vs. Time", xlab="Time", ylab="Y_t/CPI")
 ```
 
 The plot above shows that $Y_t$ still dose not behave like a white noise.
@@ -211,9 +215,9 @@ So we add some economic variables to the model to regress the final model.
 Also, we add the sine functions of time to the model to fit the seasonal effect of the business cycle.
 
 
-According to the nature of CPI, we could know that $CPI(t) = \frac{\sum_{i \in \mathcal{P}} P_{i,t} Q_i}{\sum_{i \in \mathcal{P}} P_{i,0} Q_i}$, where $\mathcal{P}$ is the set of all goods and services, $P_{i,t}$ is the price of good or service $i$ at time $t$, and $Q_i$ is the quantity of good or service $i$ at the base period. 
+According to the nature of CPI, $CPI(t) = \frac{\sum_{i \in \mathcal{P}} P_{i,t} Q_i}{\sum_{i \in \mathcal{P}} P_{i,0} Q_i}$, where $\mathcal{P}$ is the set of all goods and services, $P_{i,t}$ is the price of good or service $i$ at time $t$, and $Q_i$ is the quantity of good or service $i$ at the base period. 
 Since the Wage-Setting Relation, $W = \mathcal{A} P^e F(u,z)$, where $W$ is the nominal wage, $\mathcal{A}$ is the price mark-up, $F(u,z)$ is the function of unemployment rate and other variables, $u$ is the unemployment rate, and z is the output(GDP), and the Price-Setting Relation, $P = (1+m)\frac{W}{\mathcal{A}}$, where $m$ is the desired mark-up,
-we could know that 
+it is concluded as 
 $$CPI(t) = \frac{\sum_{i \in \mathcal{P}} (1+m_i) \frac{W_i}{\mathcal{A}} Q_i}{\sum_{i \in \mathcal{P}} P_{i,0} Q_i} = \frac{\sum_{i \in \mathcal{P}} (1+m_i) P_{i,t}^e F(u,z) Q_i}{\sum_{i \in \mathcal{P}} P_{i,0} Q_i}$$.
 
 To simplify the formular, we assume $m_i = m \,\, \forall i$ and $P_{i,t}^e = P_{i,t-1}$, we get $CPI(t) = CPI(t-1) (1+m) F(u,z)$.
@@ -286,7 +290,7 @@ legend("topleft", legend=c("Fitted CPI", "Real CPI"), col=c("blue", "red"), lty=
 
 ```{r, echo=FALSE,results='hide'}
 par(mfrow = c(1, 2))
-plot(model_1.1$residuals ~ t, data = train, col = 'black' , type = 'l', main = "Residuals vs. Time")
+plot(model_1.1$residuals ~ t, data = train, col = 'black' , type = 'l', main = "Residuals vs. Time", xlab="Time", ylab="Residuals")
 acf(model_1.1$residuals, main = "PACF of Residuals of final model", lag.max = 200)
 ```
 
