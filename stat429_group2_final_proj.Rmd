@@ -162,7 +162,14 @@ knitr::opts_chunk$set(cache.extra = knitr::rand_seed,fig.height = 3)
 
 A brief introduction/motivation for the problem at hand, relevant details about the data, additional relevant scientific information, and what is to be addressed.
 
-Citation example:
+Economics is a highly applicable field for utilization of time series analysis. The volume of data is abundant and inherently index with time. In this project, the serise under analysis is Consumer Price Index (CPI). CPI is a widely used in economic indicator that measure the changes in the average price level of a basket of goods in an economic entity. It is often used to track the inflation and valuate the price change. The positive value indicates an inflation while the negative value indicates a deflation in the market. The goods price selected to calculate this index usually have a good representative of the overall prices of all the service and products in the society. CPI is calculated relative to the price in the previous 
+time period, which is assigned to 100. The first difference of current price and prvious reflects from the index as a percentage using a weighted average formula. Usually, 3% is deemed as inflation and over 5% of CPI indicates a malignant inflation existing in the economic entity. There are also some variants for CPI.
+For example, core CPI excludes volatile food and energy prices while regional CPIs focus the CPI value in a specific geographical area. In terms of the Consumer Behavior, CPI is a passive lagged and so it does not take into account the real-time responses of consumers to the price change. For example, in practical cases, 
+consumers may choose to buy less in inflation and buy more in deflation. It also has some limits. CPI could not reflect the price movement of properties like real estate and can not capture actual quality of a service or product. 
+Given the critical role CPI plays in the economic landscape, we will employ time series analysis methods for our invistigation. It will allows us delves deeper into temporal and seasonal pattern of data. In this report, we will present a a comprehensive workflow that outlines our approach and includes core code snippets for conducting a time series analysis of the Consumer Price Index.
+
+
+Citation example: 
 
 citation within parenthesis [@tsa4]
 
