@@ -101,13 +101,13 @@ output            :
 ---
 
 ```{r setup, include = FALSE}
-if (!require('this.path')) install.packages('this.path')
-if (!require('readxl')) install.packages("readxl")
-if (!require('ggplot2')) install.packages("ggplot2")
-if (!require('papaja')) install.packages("papaja")
-if (!require('astsa')) install.packages("astsa")
-if (!require('knitr')) install.packages("knitr")
-if (!require('kableExtra')) install.packages("kableExtra")
+if (!require("this.path")) install.packages("this.path")
+if (!require("readxl")) install.packages("readxl")
+if (!require("ggplot2")) install.packages("ggplot2")
+if (!require("papaja")) install.packages("papaja")
+if (!require("astsa")) install.packages("astsa")
+if (!require("knitr")) install.packages("knitr")
+if (!require("kableExtra")) install.packages("kableExtra")
 
 library(knitr)
 library("this.path")
@@ -128,55 +128,52 @@ invest <- read_excel(paste0(curdir, "/data/invest_real.xls"))
 consump_real <- read_excel(paste0(curdir, "/data/PCE.xls"))
 
 # Clean the data
-CPI <-  na.omit(ts(infla_rate_CPI[,2], start = c(1948, 1), frequency = 4))
-unemp_rate <-  na.omit(ts(unemp_rate[,2], start = c(1948, 1), frequency = 4))
-grove_exp <-  na.omit(ts(grove_exp[,2], start = c(1948, 1), frequency = 4))
-invest <-  na.omit(ts(invest[,2], start = c(1948, 1), frequency = 4))
-consump_real <-  na.omit(ts(consump_real[,2], start = c(1959, 1), frequency = 4))
+CPI <- na.omit(ts(infla_rate_CPI[, 2], start = c(1948, 1), frequency = 4))
+unemp_rate <- na.omit(ts(unemp_rate[, 2], start = c(1948, 1), frequency = 4))
+grove_exp <- na.omit(ts(grove_exp[, 2], start = c(1948, 1), frequency = 4))
+invest <- na.omit(ts(invest[, 2], start = c(1948, 1), frequency = 4))
+consump_real <- na.omit(ts(consump_real[, 2], start = c(1959, 1), frequency = 4))
 t <- time(CPI)
 
-sin_1 <- ts(sin(2*pi*(t-1959)/40),start = c(1948, 1), frequency = 4)
-sin_2 <- ts(sin(2*pi*(t-1980)/24),start = c(1948, 1), frequency = 4)
-sin_3 <- ts(sin(2*pi*(t-1980)/48),start = c(1948, 1), frequency = 4)
+sin_1 <- ts(sin(2 * pi * (t - 1959) / 40), start = c(1948, 1), frequency = 4)
+sin_2 <- ts(sin(2 * pi * (t - 1980) / 24), start = c(1948, 1), frequency = 4)
+sin_3 <- ts(sin(2 * pi * (t - 1980) / 48), start = c(1948, 1), frequency = 4)
 
 CPI_lag1 <- lag(CPI, -1)
 CPI_lag2 <- lag(CPI, -2)
 CPI_lag3 <- lag(CPI, -3)
 
 # Combine the data
-data <- data.frame( na.omit( ts.intersect( CPI, CPI_lag1,CPI_lag2, CPI_lag3, t, sin_1, sin_2,sin_3, unemp_rate, grove_exp, invest, consump_real)))
+data <- data.frame(na.omit(ts.intersect(CPI, CPI_lag1, CPI_lag2, CPI_lag3, t, sin_1, sin_2, sin_3, unemp_rate, grove_exp, invest, consump_real)))
 colnames(data) <- c("CPI", "CPI_lag1", "CPI_lag2", "CPI_lag3", "t", "sin_1", "sin_2", "sin_3", "unemp_rate", "grove_exp", "invest", "consump_real")
 
 # Split the data into training and testing
-train <- data[1:(nrow(data)-5),]
-test <- data[(nrow(data)-4):nrow(data),]
+train <- data[1:(nrow(data) - 5), ]
+test <- data[(nrow(data) - 4):nrow(data), ]
 ```
 
 ```{r analysis-preferences}
 # Seed for random number generation
 set.seed(42)
-knitr::opts_chunk$set(cache.extra = knitr::rand_seed,fig.height = 3)
+knitr::opts_chunk$set(cache.extra = knitr::rand_seed, fig.height = 3)
 ```
 
 # Introduction
+Economics is a highly applicable field for utilization of time series analysis. The volume of data is abundant and inherently index with time. By using the time series statistical models, we can leverage historical data and catch trends and patterns for the data and make reasonable predictions. 
 
-A brief introduction/motivation for the problem at hand, relevant details about the data, additional relevant scientific information, and what is to be addressed.
+## Consumer Price Index (CPI)
+In this project, we are analyzing the Consumer Price Index (CPI), a widely-used economic indicator that measures changes in the average price level of a basket of goods in an economic entity. It is commonly used to track inflation and assess price changes. A positive CPI value indicates inflation, while a negative value indicates deflation in the market. The goods' prices selected to calculate this index typically represent the overall prices of goods and services in society. 
+CPI is calculated relative to the price in the previous time period, which is assigned a value of 100. The percentage difference between the current price and the previous price is reflected in the index using a weighted average formula. Generally, a CPI increase of 3% is considered inflation, while values over 5% may indicate significant inflation in the economic entity. There are also some variants of CPI. Such as core CPI which excludes volatile food and energy prices, and regional CPIs, which focus on CPI values in specific geographical areas. 
+Given the critical role CPI plays in the economic landscape, we will introduce our approach to explore temporal and seasonal data patterns of CPI.
 
-Economics is a highly applicable field for utilization of time series analysis. The volume of data is abundant and inherently index with time. In this project, the series under analysis is Consumer Price Index (CPI). CPI is a widely used in economic indicator that measure the changes in the average price level of a basket of goods in an economic entity. It is often used to track the inflation and valuate the price change. The positive value indicates an inflation while the negative value indicates a deflation in the market. The goods price selected to calculate this index usually have a good representative of the overall prices of all the service and products in the society. CPI is calculated relative to the price in the previous 
-time period, which is assigned to 100. The first difference of current price and prvious reflects from the index as a percentage using a weighted average formula. Usually, 3% is deemed as inflation and over 5% of CPI indicates a malignant inflation existing in the economic entity. There are also some variants for CPI.
-For example, core CPI excludes volatile food and energy prices while regional CPIs focus the CPI value in a specific geographical area. In terms of the Consumer Behavior, CPI is a passive lagged and so it does not take into account the real-time responses of consumers to the price change. For example, in practical cases, 
-consumers may choose to buy less in inflation and buy more in deflation. It also has some limits. CPI could not reflect the price movement of properties like real estate and can not capture actual quality of a service or product. 
-Given the critical role CPI plays in the economic landscape, we will employ time series analysis methods for our invistigation. It will allows us delves deeper into temporal and seasonal pattern of data. In this report, we will present a a comprehensive workflow that outlines our approach and includes core code snippets for conducting a time series analysis of the Consumer Price Index.
+## Related Research
+One of the seminal paper in this field is by James H. Stock[@STOCK1999293]. His research primarily centers around Phillips curve, which describes the connection of inflation and unemployment rate. In our own research, employment stands out as a crucial metrics that we analyze. 
+In recent years, there are some researches [@NGUYEN2023e20730] [@BARKAN20231145] employing machine learning and deep neural network for the prediction. These models exists strong performance, particularly with large dataset and when forecasting extended timeframes. However, it is important to note that due to the nature of these complex machine learning models, they often lack interpretability or the ability to provide clear explanations for their predictions.
 
-
-Citation example: 
-
-citation within parenthesis [@tsa4]
-
-
+## Data Sources and Analysis Approach
+Our primary data sources includes critical economic indicators, including the unemployment rate, government expenditure, investment, and consumption. These indicators play a pivotal role in measuring the level of economic activity within the entity. Furthermore, in our analytical approach, we use lagged and transformed Consumer Purchasing Index values, in conjunction with time-related variables, to enrich the comprehensiveness and precision of our assessments. It's worth noting that all these data elements are aligned with our response variable and are collected on a monthly basis.
 
 # Methods
-
 To address the problem at hand, we used the following three steps to analyze the data: 1. detrending, 2. lag analysis, 3. adding the economic variables.
 
 ## Detrending 
@@ -187,8 +184,8 @@ Moreover, according to the nature of the CPI, which is highly related to inflati
 detrend_model <- lm(CPI ~ I(1.05^t), data = train)
 
 par(mfrow = c(1, 2))
-plot(CPI ~ t, data = train, col = 'black' , type = 'l', main = "CPI vs. Time")
-plot(CPI ~ t, data = train, col = 'black' , type = 'l' ,main = "CPI and trend vs. Time")
+plot(CPI ~ t, data = train, col = "black", type = "l", main = "CPI vs. Time")
+plot(CPI ~ t, data = train, col = "black", type = "l", main = "CPI and trend vs. Time")
 lines(train$t, predict(detrend_model), col = "red")
 ```
 
@@ -201,7 +198,7 @@ and we improve our model by adding the first oreder lag of CPI to the model.
 
 ```{r, echo=FALSE,results='hide'}
 par(mfrow = c(1, 2))
-plot(detrend_model$residuals, type = 'l', main = "Residuals of detrending model vs. Time", xlab="Time", ylab="Residuals")
+plot(detrend_model$residuals, type = "l", main = "Residuals of detrending model vs. Time", xlab = "Time", ylab = "Residuals")
 pacf(detrend_model$residuals, main = "PACF of Residuals of detrending model", lag.max = 200)
 ```
 
@@ -212,8 +209,8 @@ After the detrending and adding the first order lag of CPI, the time series of C
 ```{r, echo=FALSE,results='hide'}
 par(mfrow = c(1, 2))
 model_1 <- lm(CPI ~ I(1.05^t) + CPI_lag1, data = train)
-plot(model_1$residuals ~ t, data = train, col = 'black' , type = 'l', main = "Y_t vs. Time", xlab="Time", ylab="Y_t")
-plot(model_1$residuals/train[,'CPI'] ~ t, data = train, col = 'black' , type = 'l', main = "Y_t/CPI vs. Time", xlab="Time", ylab="Y_t/CPI")
+plot(model_1$residuals ~ t, data = train, col = "black", type = "l", main = "Y_t vs. Time", xlab = "Time", ylab = "Y_t")
+plot(model_1$residuals / train[, "CPI"] ~ t, data = train, col = "black", type = "l", main = "Y_t/CPI vs. Time", xlab = "Time", ylab = "Y_t/CPI")
 ```
 
 The plot above shows that $Y_t$ still dose not behave like a white noise.
@@ -287,17 +284,17 @@ consump\_real & 3.423e-03 & 3.337e-04 & 10.259 & < 2e-16 \\
 
 
 ```{r, results='asis', echo=FALSE}
-model_1.1 <- lm(CPI ~ I(1.05^t) + sin_1 + sin_2+sin_3 + CPI_lag1 + unemp_rate + grove_exp + invest + consump_real, data = train)
-plot(train[,'t'],fitted(model_1.1),  col = 'black' , type = 'l', main = "Fitted CPI & real CPI vs. Time", xlab="Time", ylab="CPI")
-lines(train[,'t'],train[,'CPI'],type = 'h' ,col = "red")
-legend("topleft", legend=c("Fitted CPI", "Real CPI"), col=c("blue", "red"), lty=1:1, cex=0.8)
+model_1.1 <- lm(CPI ~ I(1.05^t) + sin_1 + sin_2 + sin_3 + CPI_lag1 + unemp_rate + grove_exp + invest + consump_real, data = train)
+plot(train[, "t"], fitted(model_1.1), col = "black", type = "l", main = "Fitted CPI & real CPI vs. Time", xlab = "Time", ylab = "CPI")
+lines(train[, "t"], train[, "CPI"], type = "h", col = "red")
+legend("topleft", legend = c("Fitted CPI", "Real CPI"), col = c("blue", "red"), lty = 1:1, cex = 0.8)
 ```
 
 
 
 ```{r, echo=FALSE,results='hide'}
 par(mfrow = c(1, 2))
-plot(model_1.1$residuals ~ t, data = train, col = 'black' , type = 'l', main = "Residuals vs. Time", xlab="Time", ylab="Residuals")
+plot(model_1.1$residuals ~ t, data = train, col = "black", type = "l", main = "Residuals vs. Time", xlab = "Time", ylab = "Residuals")
 acf(model_1.1$residuals, main = "PACF of Residuals of final model", lag.max = 200)
 ```
 
@@ -310,8 +307,8 @@ The forecasting result of the model is shown below. The plot shows that the mode
   
 ```{r, echo=FALSE,results='hide'}
 pred <- predict(model_1.1, newdata = test)
-error <- (test[,'CPI'] - pred) / test[,'CPI']
-plot(test[,'t'],error, col = 'black' , type = 'l', main = "Precnet of Predict Error vs. Time", xlab="Time", ylab="CPI")
+error <- (test[, "CPI"] - pred) / test[, "CPI"]
+plot(test[, "t"], error, col = "black", type = "l", main = "Precnet of Predict Error vs. Time", xlab = "Time", ylab = "CPI")
 ```
 
 ```{r, echo=FALSE, results='asis', comment=NA}
