@@ -177,7 +177,7 @@ citation within parenthesis [@tsa4]
 
 # Methods
 
-To address the problem at hand, we used the following three steps to analyze the data: 1. detrending, 2. lag analysis, 3. adding the economic variables.
+To address the problem at hand, we used the following three steps to analyze the data: 1. detrending, 2. adding the economic variables, 3. lag analysis,.
 
 ## Detrending 
 Observating the original data, the CPI has a significantly exponential trend. So we first use a exponential model to fit the data. 
@@ -192,35 +192,9 @@ plot(CPI ~ t, data = train, col = 'black' , type = 'l' ,main = "CPI and trend vs
 lines(train$t, predict(detrend_model), col = "red")
 ```
 
-## Lag Analysis
-
-After detrending, we use PACF to figure out weather or not the data has lags. 
-From the plot below, the data has one lags.
-Therefore, the CPI may be a AR(1) process
-and we improve our model by adding the first oreder lag of CPI to the model. 
-
-```{r, echo=FALSE,results='hide'}
-par(mfrow = c(1, 2))
-plot(detrend_model$residuals, type = 'l', main = "Residuals of detrending model vs. Time", xlab="Time", ylab="Residuals")
-pacf(detrend_model$residuals, main = "PACF of Residuals of detrending model", lag.max = 200)
-```
-
 ## Adding the economic variables
 
-After the detrending and adding the first order lag of CPI, the time series of CPI, $\{CPI(t)\}$, has became $CPI(t) = T(t) + CPI(t-1) + Y_t$.
-
-```{r, echo=FALSE,results='hide'}
-par(mfrow = c(1, 2))
-model_1 <- lm(CPI ~ I(1.05^t) + CPI_lag1, data = train)
-plot(model_1$residuals ~ t, data = train, col = 'black' , type = 'l', main = "Y_t vs. Time", xlab="Time", ylab="Y_t")
-plot(model_1$residuals/train[,'CPI'] ~ t, data = train, col = 'black' , type = 'l', main = "Y_t/CPI vs. Time", xlab="Time", ylab="Y_t/CPI")
-```
-
-The plot above shows that $Y_t$ still dose not behave like a white noise.
-Additionally, the significant depressions at 2008 and 2020 and the significant peak at 1979 reflexed the influence of the economic crisis[@gross2019iran] [@williams2010uncontrolled] [@forbes_2019_strange_new_world]. 
-So we add some economic variables to the model to regress the final model. 
-Also, we add the sine functions of time to the model to fit the seasonal effect of the business cycle.
-
+After the detrending, in oreder to get a better result, we will choose some economic variables based on the nature of CPI.
 
 According to the nature of CPI [@blanchard2004macroeconomics], $CPI(t) = \frac{\sum_{i \in \mathcal{P}} P_{i,t} Q_i}{\sum_{i \in \mathcal{P}} P_{i,0} Q_i}$, where $\mathcal{P}$ is the set of all goods and services, $P_{i,t}$ is the price of good or service $i$ at time $t$, and $Q_i$ is the quantity of good or service $i$ at the base period. 
 Since the Wage-Setting Relation, $W = \mathcal{A} P^e F(u,z)$, where $W$ is the nominal wage, $\mathcal{A}$ is the price mark-up, $F(u,z)$ is the function of unemployment rate and other variables, $u$ is the unemployment rate, and z is the output(GDP), and the Price-Setting Relation, $P = (1+m)\frac{W}{\mathcal{A}}$, where $m$ is the desired mark-up,
@@ -229,11 +203,46 @@ $$CPI(t) = \frac{\sum_{i \in \mathcal{P}} (1+m_i) \frac{W_i}{\mathcal{A}} Q_i}{\
 
 To simplify the formular, we assume $m_i = m \,\, \forall i$ and $P_{i,t}^e = P_{i,t-1}$, we get $CPI(t) = CPI(t-1) (1+m) F(u,z)$.
 By the assumption of $m$ is small and $F(u,z) = 1 - \alpha u + \beta z$, we get $CPI(t) = CPI(t-1) (1+m) (1 - \alpha u + \beta z)$ $\cong CPI(t-1) ( 1 + m - \alpha u - \beta z)$.
-We could conclude $Y_t = CPI(t) - CPI(t-1)$ $=CPI(t-1)( m - \alpha u + \beta z)$.
-For easy-computation, we assume CPI(t-1) is a constent in the cross term, we get $Y_t = M - \mathcal{A} u + \mathcal{B} z$.
+We could conclude $CPI(t)=CPI(t-1)(1 + m - \alpha u + \beta z)$.
+For easy-computation, we assume CPI(t-1) is a constent we get $CPI(t)=CPI_0(1 + m - \alpha u + \beta z)$.
 Therefore we add the unemployment rate, the real consumption, real grovement spending, and the real investment to the model.
 
-To summarize the model, we get the final model as follows:
+Moreover, we add the sine functions of time to the model to fit the seasonal effect of the business cycle and the square of time to fit the trend of the CPI.
+
+To summarize the first model, we get the model as follows:
+
+\begin{align*}
+CPI(t) =& a_0 + a_1 \cdot 1.05^t  + a_2 (t-1959)^2 && (\text{trend})\\
+& + a_3 \sin\left(\frac{2\pi(t-1959)}{40}\right) + a_4 \sin\left(\frac{2\pi(t-1980)}{24}\right) + a_5 \sin\left(\frac{2\pi(t-1980)}{48}\right) && (\text{business cycle})\\
+& + b_1 C_t + b_2 u_t + b_3 G_t + b_4 I_t + W_t && (\text{economic variables})
+\end{align*}
+
+```{r, echo=FALSE,results='hide'}
+par(mfrow = c(1, 2))
+model_0 <- lm(CPI ~ I(1.05^t) +  I((t-1951)^2) + I(exp(unemp_rate))  + consump_real + sin_1 + sin_2 + invest , data = train)
+plot(model_0$residuals ~ t, data = train, col = 'black' , type = 'l', main = "Residuals vs. Time", xlab="Time", ylab="Y_t")
+plot(model_0$residuals/train[,'CPI'] ~ t, data = train, col = 'black' , type = 'l', main = "Residuals/CPI vs. Time", xlab="Time", ylab="Residuals/CPI")
+```
+
+The plot above shows that residuals still dose not behave like a white noise.
+Therefore, we will use ACf to figure out weather or not the data has lags and improve our model.
+
+## Lag Analysis
+
+After conclude the first model, we use PACF to figure out weather or not the data has lags. 
+From the plot below, the data has one lags.
+Therefore, the CPI may be a AR(1) process
+and we improve our model by adding the first oreder lag of CPI to the model. 
+
+```{r, echo=FALSE,results='hide'}
+par(mfrow = c(1, 2))
+plot(model_0$residuals, type = 'l', main = "Residuals of first model vs. Time", xlab="Time", ylab="Residuals")
+pacf(model_0$residuals, main = "PACF of Residuals of first model", lag.max = 10)
+```
+
+Moreover, we delete the square of time from the model since it is not significant.
+
+To summarize the second model, we get the final model as follows:
 
 \begin{align*}
 CPI(t) =& a_0 + a_1 \cdot 1.05^t + a_2 CPI(t-1)  && (\text{trend and lags})\\
