@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.6.23)  11 DEC 2023 12:24
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.6.23)  11 DEC 2023 15:30
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -776,7 +776,17 @@ Package: array 2022/09/04 v2.5g Tabular extension package (FMi)
 \extratabsurround=\skip84
 \backup@length=\skip85
 \ar@cellbox=\box80
-)) (/usr/local/texlive/2023/texmf-dist/tex/latex/biblatex/biblatex.sty
+)) (/usr/local/texlive/2023/texmf-dist/tex/latex/hanging/hanging.sty
+Package: hanging 2009/09/02 v1.2b hanging paragraphs and punctuation
+\h@ngcommawd=\skip86
+\h@ngfstopwd=\skip87
+\h@ngquotewd=\skip88
+\h@ngdquotewd=\skip89
+\h@ngquerywd=\skip90
+\h@ngexclwd=\skip91
+\h@ngcolonwd=\skip92
+\h@ngscolonwd=\skip93
+) (/usr/local/texlive/2023/texmf-dist/tex/latex/biblatex/biblatex.sty
 Package: biblatex 2023/03/05 v3.19 programmable bibliographies (PK/MW)
 (/usr/local/texlive/2023/texmf-dist/tex/latex/logreq/logreq.sty
 Package: logreq 2010/08/04 v1.0 xml request logger
@@ -829,14 +839,14 @@ Package: ifthen 2022/04/13 v1.1d Standard LaTeX ifthen package (DPC)
 \blx@sectionciteorderinternal@0=\count381
 \blx@entrysetcounter=\count382
 \blx@biblioinstance=\count383
-\labelnumberwidth=\skip86
-\labelalphawidth=\skip87
-\biblabelsep=\skip88
-\bibitemsep=\skip89
-\bibnamesep=\skip90
-\bibinitsep=\skip91
-\bibparsep=\skip92
-\bibhang=\skip93
+\labelnumberwidth=\skip94
+\labelalphawidth=\skip95
+\biblabelsep=\skip96
+\bibitemsep=\skip97
+\bibnamesep=\skip98
+\bibinitsep=\skip99
+\bibparsep=\skip100
+\bibhang=\skip101
 \blx@bcfin=\read3
 \blx@bcfout=\write6
 \blx@langwohyphens=\language87
@@ -918,20 +928,20 @@ Package biblatex Info: ... file 'biblatex-dm.cfg' not found.
 \c@savedoriglanguage=\count452
 \c@pageref=\count453
 \c@savedpageref=\count454
-\shorthandwidth=\skip94
-\shortjournalwidth=\skip95
-\shortserieswidth=\skip96
-\shorttitlewidth=\skip97
-\shortauthorwidth=\skip98
-\shorteditorwidth=\skip99
-\locallabelnumberwidth=\skip100
-\locallabelalphawidth=\skip101
-\localshorthandwidth=\skip102
-\localshortjournalwidth=\skip103
-\localshortserieswidth=\skip104
-\localshorttitlewidth=\skip105
-\localshortauthorwidth=\skip106
-\localshorteditorwidth=\skip107
+\shorthandwidth=\skip102
+\shortjournalwidth=\skip103
+\shortserieswidth=\skip104
+\shorttitlewidth=\skip105
+\shortauthorwidth=\skip106
+\shorteditorwidth=\skip107
+\locallabelnumberwidth=\skip108
+\locallabelalphawidth=\skip109
+\localshorthandwidth=\skip110
+\localshortjournalwidth=\skip111
+\localshortserieswidth=\skip112
+\localshorttitlewidth=\skip113
+\localshortauthorwidth=\skip114
+\localshorteditorwidth=\skip115
 Package biblatex Info: Trying to load enhanced support for Unicode engines...
 Package biblatex Info: ... file 'blx-unicode.def' found.
 (/usr/local/texlive/2023/texmf-dist/tex/latex/biblatex/blx-unicode.def)
@@ -1022,37 +1032,37 @@ Package: xurl 2022/01/09 v 0.10 modify URL breaks
 xurl: Set penalties for biblatex
 )
 Package translations Info: No language package found. I am going to use `englis
-h' as default language. on input line 61.
+h' as default language. on input line 66.
 \@quotelevel=\count471
 \@quotereset=\count472
 (./stat429_group2_final_proj.aux)
 \openout1 = `stat429_group2_final_proj.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 61.
-LaTeX Font Info:    ... okay on input line 61.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 61.
-LaTeX Font Info:    ... okay on input line 61.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 61.
-LaTeX Font Info:    ... okay on input line 61.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 61.
-LaTeX Font Info:    ... okay on input line 61.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 61.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 66.
+LaTeX Font Info:    ... okay on input line 66.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 66.
+LaTeX Font Info:    ... okay on input line 66.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 66.
+LaTeX Font Info:    ... okay on input line 66.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 66.
+LaTeX Font Info:    ... okay on input line 66.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 66.
 LaTeX Font Info:    Trying to load font information for TS1+cmr on input line 6
-1.
+6.
 (/usr/local/texlive/2023/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2022/07/10 v2.5l Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 61.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 61.
-LaTeX Font Info:    ... okay on input line 61.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 61.
-LaTeX Font Info:    ... okay on input line 61.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 61.
-LaTeX Font Info:    ... okay on input line 61.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 61.
-LaTeX Font Info:    ... okay on input line 61.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 61.
-LaTeX Font Info:    ... okay on input line 61.
+LaTeX Font Info:    ... okay on input line 66.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 66.
+LaTeX Font Info:    ... okay on input line 66.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 66.
+LaTeX Font Info:    ... okay on input line 66.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 66.
+LaTeX Font Info:    ... okay on input line 66.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 66.
+LaTeX Font Info:    ... okay on input line 66.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 66.
+LaTeX Font Info:    ... okay on input line 66.
 *geometry* driver: auto-detecting
 *geometry* detected driver: xetex
 *geometry* verbose mode - [ preamble ] result:
@@ -1096,7 +1106,7 @@ Package caption Info: hyperref package is loaded.
 Package caption Info: listings package is loaded.
 Package caption Info: End \AtBeginDocument code.
 \c@lstlisting=\count473
-Package hyperref Info: Link coloring OFF on input line 61.
+Package hyperref Info: Link coloring OFF on input line 66.
 
 (/usr/local/texlive/2023/texmf-dist/tex/latex/translations/translations-basic-d
 ictionary-english.trsl
@@ -1104,7 +1114,7 @@ File: translations-basic-dictionary-english.trsl (english translation file `tra
 nslations-basic-dictionary')
 )
 Package translations Info: loading dictionary `translations-basic-dictionary' f
-or `english'. on input line 61.
+or `english'. on input line 66.
 Package biblatex Info: Trying to load language 'english'...
 Package biblatex Info: ... file 'english.lbx' found.
 (/usr/local/texlive/2023/texmf-dist/tex/latex/biblatex/lbx/english.lbx
@@ -1118,29 +1128,186 @@ Package biblatex Info: Automatic encoding selection.
 
 Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'stat429_group2_final_proj.bbl' found.
-(./stat429_group2_final_proj.bbl
-
-Package biblatex Warning: Biber reported the following issues
-(biblatex)                with 'inflation1960-1970':
-(biblatex)                - url entry 'inflation1960-1970' (r-references.bib): 
-Invalid format 'https://www.federalreservehistory.org/essays/great-inflation' o
-f date field 'urldate' - ignoring.
-
+(./stat429_group2_final_proj.bbl)
+Package biblatex Info: Reference section=0 on input line 66.
+Package biblatex Info: Reference segment=0 on input line 66.
+Class apa6 Info: Keywords not defined on input line 68.
+LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 6
+8.
+(/usr/local/texlive/2023/texmf-dist/tex/latex/lm/ot1lmr.fd
+File: ot1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-Runaway argument?
-{The consumer price index (CPI) is one of the most important macroeco\ETC.
-! File ended while scanning use of \field.
-<inserted text> 
-                \par 
-l.61 \begin{document}
-                      
-Here is how much of TeX's memory you used:
- 34896 strings out of 476683
- 702756 string characters out of 5804047
- 1844018 words of memory out of 5000000
- 54690 multiletter control sequences out of 15000+600000
- 516344 words of font info for 37 fonts, out of 8000000 for 9000
- 1348 hyphenation exceptions out of 8191
- 84i,1n,89p,1310b,801s stack positions out of 10000i,1000n,20000p,200000b,200000s
+LaTeX Font Info:    Trying to load font information for OML+lmm on input line 6
+8.
+(/usr/local/texlive/2023/texmf-dist/tex/latex/lm/omllmm.fd
+File: omllmm.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 
+68.
+(/usr/local/texlive/2023/texmf-dist/tex/latex/lm/omslmsy.fd
+File: omslmsy.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 
+68.
+(/usr/local/texlive/2023/texmf-dist/tex/latex/lm/omxlmex.fd
+File: omxlmex.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <12> on input line 68.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <8> on input line 68.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <6> on input line 68.
+[1
 
-No pages of output.
+] [2] [3]
+File: stat429_group2_final_proj_files/figure-latex/unnamed-chunk-1-1.pdf Graphi
+c file (type pdf)
+<use stat429_group2_final_proj_files/figure-latex/unnamed-chunk-1-1.pdf>
+
+Underfull \vbox (badness 1297) has occurred while \output is active []
+
+[4]
+File: stat429_group2_final_proj_files/figure-latex/unnamed-chunk-2-1.pdf Graphi
+c file (type pdf)
+<use stat429_group2_final_proj_files/figure-latex/unnamed-chunk-2-1.pdf>
+[5]
+Overfull \hbox (75.41368pt too wide) detected at line 136
+[]
+ []
+
+File: stat429_group2_final_proj_files/figure-latex/unnamed-chunk-3-1.pdf Graphi
+c file (type pdf)
+<use stat429_group2_final_proj_files/figure-latex/unnamed-chunk-3-1.pdf>
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[6]
+File: stat429_group2_final_proj_files/figure-latex/unnamed-chunk-4-1.pdf Graphi
+c file (type pdf)
+<use stat429_group2_final_proj_files/figure-latex/unnamed-chunk-4-1.pdf>
+
+Overfull \hbox (24.89137pt too wide) in paragraph at lines 151--152
+[][]  
+ []
+
+
+Overfull \hbox (75.41368pt too wide) detected at line 161
+[]
+ []
+
+
+Underfull \vbox (badness 5446) has occurred while \output is active []
+
+[7]
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <10> on input line 175.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <7> on input line 175.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <5> on input line 175.
+
+Overfull \hbox (2.7778pt too wide) detected at line 186
+$\OMS/lmsy/m/n/10 ^^@\OT1/lmr/m/n/10 7$
+ []
+
+
+Overfull \hbox (2.7778pt too wide) detected at line 187
+$\OMS/lmsy/m/n/10 ^^@\OT1/lmr/m/n/10 5$
+ []
+
+
+Overfull \hbox (2.7778pt too wide) detected at line 188
+$\OMS/lmsy/m/n/10 ^^@\OT1/lmr/m/n/10 6$
+ []
+
+
+Overfull \hbox (2.7778pt too wide) detected at line 189
+$\OMS/lmsy/m/n/10 ^^@\OT1/lmr/m/n/10 3$
+ []
+
+
+Overfull \hbox (7.7778pt too wide) detected at line 191
+ $[]$
+ []
+
+
+Overfull \hbox (7.7778pt too wide) detected at line 191
+  $[]$$\OT1/lmr/m/n/10 2$
+ []
+
+
+Overfull \hbox (11.66663pt too wide) detected at line 192
+$\OML/lmm/m/it/10 :\OT1/lmr/m/n/10 000 745$ $ []$
+ []
+
+
+Overfull \hbox (11.66663pt too wide) detected at line 193
+$\OML/lmm/m/it/10 :\OT1/lmr/m/n/10 004 470$ $ []$
+ []
+
+
+Overfull \hbox (11.66663pt too wide) detected at line 194
+$\OML/lmm/m/it/10 :\OT1/lmr/m/n/10 037 966$ $ []$
+ []
+
+
+Overfull \hbox (7.7778pt too wide) detected at line 195
+ $[]$
+ []
+
+
+Overfull \hbox (7.7778pt too wide) detected at line 195
+  $[]$$\OT1/lmr/m/n/10 2$
+ []
+
+[8]
+File: stat429_group2_final_proj_files/figure-latex/unnamed-chunk-5-1.pdf Graphi
+c file (type pdf)
+<use stat429_group2_final_proj_files/figure-latex/unnamed-chunk-5-1.pdf>
+File: stat429_group2_final_proj_files/figure-latex/unnamed-chunk-6-1.pdf Graphi
+c file (type pdf)
+<use stat429_group2_final_proj_files/figure-latex/unnamed-chunk-6-1.pdf>
+
+Overfull \hbox (24.89137pt too wide) in paragraph at lines 213--214
+[][]  
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[9] [10]
+File: stat429_group2_final_proj_files/figure-latex/unnamed-chunk-7-1.pdf Graphi
+c file (type pdf)
+<use stat429_group2_final_proj_files/figure-latex/unnamed-chunk-7-1.pdf>
+
+Underfull \vbox (badness 1173) has occurred while \output is active []
+
+[11]
+Overfull \hbox (75.41368pt too wide) detected at line 240
+[]
+ []
+
+
+Underfull \vbox (badness 1147) has occurred while \output is active []
+
+[12] [13] [14]
+
+LaTeX Warning: Empty bibliography on input line 308.
+
+AED endfloat: Processing end Figures and Tables [15] (./stat429_group2_final_pr
+oj.aux)
+Package logreq Info: Writing requests to 'stat429_group2_final_proj.run.xml'.
+\openout1 = `stat429_group2_final_proj.run.xml'.
+
+ ) 
+Here is how much of TeX's memory you used:
+ 35156 strings out of 476683
+ 709457 string characters out of 5804047
+ 1864018 words of memory out of 5000000
+ 54886 multiletter control sequences out of 15000+600000
+ 571714 words of font info for 78 fonts, out of 8000000 for 9000
+ 1348 hyphenation exceptions out of 8191
+ 84i,13n,89p,1197b,813s stack positions out of 10000i,1000n,20000p,200000b,200000s
+
+Output written on stat429_group2_final_proj.pdf (15 pages).
