@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.6.23)  10 DEC 2023 23:25
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.6.23)  10 DEC 2023 23:36
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1118,7 +1118,15 @@ Package biblatex Info: Automatic encoding selection.
 
 Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'stat429_group2_final_proj.bbl' found.
-(./stat429_group2_final_proj.bbl)
+(./stat429_group2_final_proj.bbl
+
+Package biblatex Warning: Biber reported the following issues
+(biblatex)                with 'inflation1960-1970':
+(biblatex)                - url entry 'inflation1960-1970' (r-references.bib): 
+Invalid format 'https://www.federalreservehistory.org/essays/great-inflation' o
+f date field 'urldate' - ignoring.
+
+)
 Runaway argument?
 {The consumer price index (CPI) is one of the most important macroeco\ETC.
 ! File ended while scanning use of \field.
@@ -1128,11 +1136,11 @@ l.61 \begin{document}
                       
 Here is how much of TeX's memory you used:
  34892 strings out of 476683
- 702558 string characters out of 5804047
+ 702607 string characters out of 5804047
  1844018 words of memory out of 5000000
  54686 multiletter control sequences out of 15000+600000
  516344 words of font info for 37 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 84i,1n,89p,1306b,801s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 84i,1n,89p,1310b,801s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
 No pages of output.
