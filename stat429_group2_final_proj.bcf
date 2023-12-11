@@ -2344,16 +2344,20 @@
     <bcf:datasource type="file" datatype="bibtex" glob="false">r-references.bib</bcf:datasource>
   </bcf:bibdata>
   <bcf:section number="0">
-    <bcf:citekey order="1">tsa4</bcf:citekey>
-    <bcf:citekey order="2">gross2019iran</bcf:citekey>
-    <bcf:citekey order="3">williams2010uncontrolled</bcf:citekey>
-    <bcf:citekey order="4">forbes_2019_strange_new_world</bcf:citekey>
-    <bcf:citekey order="5">blanchard2004macroeconomics</bcf:citekey>
-    <bcf:citekey order="6">tsa4</bcf:citekey>
-    <bcf:citekey order="7">gross2019iran</bcf:citekey>
-    <bcf:citekey order="8">williams2010uncontrolled</bcf:citekey>
-    <bcf:citekey order="9">forbes_2019_strange_new_world</bcf:citekey>
-    <bcf:citekey order="10">blanchard2004macroeconomics</bcf:citekey>
+    <bcf:citekey order="1">STOCK1999293</bcf:citekey>
+    <bcf:citekey order="2">NGUYEN2023e20730</bcf:citekey>
+    <bcf:citekey order="3">BARKAN20231145</bcf:citekey>
+    <bcf:citekey order="4">gross2019iran</bcf:citekey>
+    <bcf:citekey order="5">williams2010uncontrolled</bcf:citekey>
+    <bcf:citekey order="6">forbes_2019_strange_new_world</bcf:citekey>
+    <bcf:citekey order="7">blanchard2004macroeconomics</bcf:citekey>
+    <bcf:citekey order="8">STOCK1999293</bcf:citekey>
+    <bcf:citekey order="9">NGUYEN2023e20730</bcf:citekey>
+    <bcf:citekey order="10">BARKAN20231145</bcf:citekey>
+    <bcf:citekey order="11">gross2019iran</bcf:citekey>
+    <bcf:citekey order="12">williams2010uncontrolled</bcf:citekey>
+    <bcf:citekey order="13">forbes_2019_strange_new_world</bcf:citekey>
+    <bcf:citekey order="14">blanchard2004macroeconomics</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="nty">

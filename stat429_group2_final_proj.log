@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022) (preloaded format=xelatex 2022.9.14)  10 DEC 2023 17:48
+This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022) (preloaded format=xelatex 2022.9.14)  10 DEC 2023 20:55
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1025,127 +1025,146 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 
 ] [2]
 
-LaTeX Warning: Citation 'tsa4' on page 3 undefined on input line 74.
+LaTeX Warning: Citation 'STOCK1999293' on page 3 undefined on input line 80.
 
+
+LaTeX Warning: Citation 'NGUYEN2023e20730' on page 3 undefined on input line 81.
+
+
+LaTeX Warning: Citation 'BARKAN20231145' on page 3 undefined on input line 81.
+
+[3]
 File: stat429_group2_final_proj_files/figure-latex/unnamed-chunk-1-1.pdf Graphic file (type pdf)
 <use stat429_group2_final_proj_files/figure-latex/unnamed-chunk-1-1.pdf>
-[3]
+
+Underfull \vbox (badness 1297) has occurred while \output is active []
+
+ [4]
 File: stat429_group2_final_proj_files/figure-latex/unnamed-chunk-2-1.pdf Graphic file (type pdf)
 <use stat429_group2_final_proj_files/figure-latex/unnamed-chunk-2-1.pdf>
 
-Overfull \hbox (28.90639pt too wide) in paragraph at lines 94--95
-[][]  
+
+LaTeX Warning: Citation 'gross2019iran' on page 5 undefined on input line 105.
+
+
+LaTeX Warning: Citation 'williams2010uncontrolled' on page 5 undefined on input line 105.
+
+
+LaTeX Warning: Citation 'forbes_2019_strange_new_world' on page 5 undefined on input line 105.
+
+
+LaTeX Warning: Citation 'blanchard2004macroeconomics' on page 5 undefined on input line 109.
+
+[5]
+Overfull \hbox (75.41368pt too wide) detected at line 128
+[]
  []
 
 File: stat429_group2_final_proj_files/figure-latex/unnamed-chunk-3-1.pdf Graphic file (type pdf)
 <use stat429_group2_final_proj_files/figure-latex/unnamed-chunk-3-1.pdf>
 
-LaTeX Warning: Citation 'gross2019iran' on page 4 undefined on input line 103.
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [6]
+File: stat429_group2_final_proj_files/figure-latex/unnamed-chunk-4-1.pdf Graphic file (type pdf)
+<use stat429_group2_final_proj_files/figure-latex/unnamed-chunk-4-1.pdf>
+
+Overfull \hbox (24.89137pt too wide) in paragraph at lines 142--143
+[][]  
+ []
 
 
-LaTeX Warning: Citation 'williams2010uncontrolled' on page 4 undefined on input line 103.
-
-
-LaTeX Warning: Citation 'forbes_2019_strange_new_world' on page 4 undefined on input line 103.
-
-
-LaTeX Warning: Citation 'blanchard2004macroeconomics' on page 4 undefined on input line 107.
-
-[4]
-Overfull \hbox (75.41368pt too wide) detected at line 124
+Overfull \hbox (75.41368pt too wide) detected at line 152
 []
  []
 
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 136.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 136.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 136.
 
-Overfull \hbox (2.7778pt too wide) detected at line 147
+Underfull \vbox (badness 5446) has occurred while \output is active []
+
+ [7]
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <10> on input line 164.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <7> on input line 164.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <5> on input line 164.
+
+Overfull \hbox (2.7778pt too wide) detected at line 175
 $\OMS/lmsy/m/n/10 ^^@\OT1/lmr/m/n/10 7$
  []
 
 
-Overfull \hbox (2.7778pt too wide) detected at line 148
+Overfull \hbox (2.7778pt too wide) detected at line 176
 $\OMS/lmsy/m/n/10 ^^@\OT1/lmr/m/n/10 5$
  []
 
 
-Overfull \hbox (2.7778pt too wide) detected at line 149
+Overfull \hbox (2.7778pt too wide) detected at line 177
 $\OMS/lmsy/m/n/10 ^^@\OT1/lmr/m/n/10 6$
  []
 
 
-Overfull \hbox (2.7778pt too wide) detected at line 150
+Overfull \hbox (2.7778pt too wide) detected at line 178
 $\OMS/lmsy/m/n/10 ^^@\OT1/lmr/m/n/10 3$
  []
 
 
-Overfull \hbox (7.7778pt too wide) detected at line 152
+Overfull \hbox (7.7778pt too wide) detected at line 180
  $[]$
  []
 
 
-Overfull \hbox (7.7778pt too wide) detected at line 152
+Overfull \hbox (7.7778pt too wide) detected at line 180
   $[]$$\OT1/lmr/m/n/10 2$
  []
 
 
-Overfull \hbox (11.66663pt too wide) detected at line 153
+Overfull \hbox (11.66663pt too wide) detected at line 181
 $\OML/lmm/m/it/10 :\OT1/lmr/m/n/10 000 745$ $[]$
  []
 
 
-Overfull \hbox (11.66663pt too wide) detected at line 154
+Overfull \hbox (11.66663pt too wide) detected at line 182
 $\OML/lmm/m/it/10 :\OT1/lmr/m/n/10 004 470$ $[]$
  []
 
 
-Overfull \hbox (11.66663pt too wide) detected at line 155
+Overfull \hbox (11.66663pt too wide) detected at line 183
 $\OML/lmm/m/it/10 :\OT1/lmr/m/n/10 037 966$ $[]$
  []
 
 
-Overfull \hbox (7.7778pt too wide) detected at line 156
+Overfull \hbox (7.7778pt too wide) detected at line 184
  $[]$
  []
 
 
-Overfull \hbox (7.7778pt too wide) detected at line 156
+Overfull \hbox (7.7778pt too wide) detected at line 184
   $[]$$\OT1/lmr/m/n/10 2$
  []
 
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [5]
-File: stat429_group2_final_proj_files/figure-latex/unnamed-chunk-4-1.pdf Graphic file (type pdf)
-<use stat429_group2_final_proj_files/figure-latex/unnamed-chunk-4-1.pdf>
 File: stat429_group2_final_proj_files/figure-latex/unnamed-chunk-5-1.pdf Graphic file (type pdf)
 <use stat429_group2_final_proj_files/figure-latex/unnamed-chunk-5-1.pdf>
-
-Overfull \hbox (24.89137pt too wide) in paragraph at lines 170--171
-[][]  
- []
-
-[6]
+[8]
 File: stat429_group2_final_proj_files/figure-latex/unnamed-chunk-6-1.pdf Graphic file (type pdf)
 <use stat429_group2_final_proj_files/figure-latex/unnamed-chunk-6-1.pdf>
 
-Underfull \vbox (badness 5008) has occurred while \output is active []
+Overfull \hbox (24.89137pt too wide) in paragraph at lines 198--199
+[][]  
+ []
 
- [7] [8]
+File: stat429_group2_final_proj_files/figure-latex/unnamed-chunk-7-1.pdf Graphic file (type pdf)
+<use stat429_group2_final_proj_files/figure-latex/unnamed-chunk-7-1.pdf>
 
-LaTeX Warning: Empty bibliography on input line 200.
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
-AED endfloat: Processing end Figures and Tables [9] (./stat429_group2_final_proj.aux)
+ [9] [10]
+
+LaTeX Warning: Empty bibliography on input line 228.
+
+AED endfloat: Processing end Figures and Tables [11] (./stat429_group2_final_proj.aux)
 
 LaTeX Warning: There were undefined references.
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
 
 Package biblatex Warning: Please (re)run Biber on the file:
@@ -1157,12 +1176,12 @@ Package logreq Info: Writing requests to 'stat429_group2_final_proj.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 34901 strings out of 476179
- 700627 string characters out of 5809544
- 1370613 words of memory out of 5000000
- 55135 multiletter control sequences out of 15000+600000
+ 34911 strings out of 476179
+ 701038 string characters out of 5809544
+ 1372714 words of memory out of 5000000
+ 55144 multiletter control sequences out of 15000+600000
  528686 words of font info for 74 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  84i,12n,89p,859b,1592s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on stat429_group2_final_proj.pdf (9 pages).
+Output written on stat429_group2_final_proj.pdf (11 pages).

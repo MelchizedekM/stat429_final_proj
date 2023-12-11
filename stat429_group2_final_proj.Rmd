@@ -30,6 +30,7 @@ header-includes:
   - \usepackage{siunitx}
   - \usepackage{float} 
   - \newenvironment{smalltable}{\begin{table}[H]\footnotesize}{\end{table}}
+  
 author: 
   - name          : "Ruiming Min"
     affiliation   : "1"
