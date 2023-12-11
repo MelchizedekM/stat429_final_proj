@@ -63,7 +63,6 @@ affiliation:
   - id            : "2"
     institution   : "UIUC"
 
-
 authornote: |
   Enter author note here.
 
