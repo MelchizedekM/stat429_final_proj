@@ -47,22 +47,22 @@ author:
     affiliation   : "2"
     email         : "zw70@illinois.edu"
     role:
-      - "Writing - Discussion"
+      - "Writing - Discussion, phrase, grammar"
       - "Final review and provide suggestions"
       - "Writing - Citation and Reference management"
   - name          : "Qi Yang"
     affiliation   : "3"
     role:
-      - "role 1"
-      - "role 2"
+      - "Writing - Abstract & Result comment & report"
+      - "Writing - Review & Editing"
   - name          : "Shumeng Zhang"
     affiliation   : "4"
     role:
-      - "role 3"
-      - "role 4"
+      - "Writing - Introduction "
+      - "Writing - Review & Editing"
 
 affiliation:
-  - id            : "2"
+  - id            : "5"
     institution   : "UIUC"
 
 authornote: |
@@ -71,6 +71,7 @@ authornote: |
   Zicheng Wang:zw70
   Qi Yang:qiy4
   Shumeng Zhang:sz65
+
 
 
 abstract: |
@@ -350,7 +351,7 @@ In conclusion, the model's statistical significance, accuracy in fitting histori
 # Discussion
 
 ## Main summary of the current study
-By running a time series analysis on incorporated economic variables: unemployment rate, real consumption, real government spending, and real investment, it is evidently shown these economic variables are significant in predicting CPI. The model developed in this study to predict (Consumer Price Index )CPI is:
+By running a time series analysis on incorporated economic variables: unemployment rate, real consumption, real government spending, and real investment, it is evidently shown these economic variables are significant in predicting CPI. The model developed in this study to predict (Consumer Price Index)CPI is:
 
 \begin{align*}
 CPI(t) =& a_0 + a_1 \cdot 1.05^t + a_2 CPI(t-1)  && (\text{trend and lags})\\
@@ -376,31 +377,15 @@ The major suggestion is to continue investigating other economic factors, like i
 :::
 
 \begin{hangparas}{4em}{1}
-\noindent Barone, R. (2019). A Strange New World: Economic Slowdown, Liquidity Issues. Retrieved from https://www.forbes.com/sites/greatspeculations/2019/09/22/a-strange-new-world-economic-slowdown-liquidity-issues/?sh=4b97f34b89ff \newline
-\end{hangparas}
-
-\begin{hangparas}{4em}{1}
 \noindent Barkan, O., Benchimol, J., Caspi, I., Cohen, E., Hammer, A., \& Koenigstein, N. (2023). Forecasting CPI inflation components with Hierarchical Recurrent Neural Networks. International Journal of Forecasting, 39(3), 1145-1162. https://doi.org/10.1016/j.ijforecast.2022.04.009 \newline
 \end{hangparas}
 
 \begin{hangparas}{4em}{1}
-\noindent Stock, J. H., \& Watson, M. W. (1999). Forecasting inflation. Journal of Monetary Economics, 44(2), 293-335. https://doi.org/10.1016/S0304-3932(99)00027-6 \newline
-\end{hangparas}
-
-\begin{hangparas}{4em}{1}
-\noindent Corry, B. (1986). Keynes's Economics: A Revolution in Economic Theory or in Economic Policy? In R. D. Collison Black (Ed.), Keynes's Economics. Palgrave Macmillan UK.\newline
+\noindent Barone, R. (2019). A Strange New World: Economic Slowdown, Liquidity Issues. Retrieved from https://www.forbes.com/sites/greatspeculations/2019/09/22/a-strange-new-world-economic-slowdown-liquidity-issues/?sh=4b97f34b89ff \newline
 \end{hangparas}
 
 \begin{hangparas}{4em}{1}
 \noindent Blanchard, O. J., \& Sheen, J. R. (2004). Macroeconomics. Pearson Education.\newline
-\end{hangparas}
-
-\begin{hangparas}{4em}{1}
-\noindent Vaggi, G., \& Groenewegen, P. (2003). Milton Friedman (1912--): Monetarism and its Critics. In Milton Friedman. Palgrave Macmillan UK.\newline
-\end{hangparas}
-
-\begin{hangparas}{4em}{1}
-\noindent Nguyen, T.-T., Nguyen, H.-G., Lee, J.-Y., Wang, Y.-L., \& Tsai, C.-S. (2023). The consumer price index prediction using machine learning approaches: Evidence from the United States. Heliyon, 9(10), Article e20730. https://doi.org/10.1016/j.heliyon.2023.e20730 \newline
 \end{hangparas}
 
 \begin{hangparas}{4em}{1}
@@ -412,9 +397,27 @@ The major suggestion is to continue investigating other economic factors, like i
 \end{hangparas}
 
 \begin{hangparas}{4em}{1}
-\noindent Williams, M. (2010). Uncontrolled Risk: Lessons of Lehman Brothers and How Systemic Risk Can Still Bring Down the World Financial System. McGraw Hill LLC.\newline
+\noindent Corry, B. (1986). Keynes's Economics: A Revolution in Economic Theory or in Economic Policy? In R. D. Collison Black (Ed.), Keynes's Economics. Palgrave Macmillan UK.\newline
 \end{hangparas}
 
 \begin{hangparas}{4em}{1}
 \noindent Gross, S. (2019). What Iran's 1979 revolution meant for US and global oil markets. Retrieved March 2019, from https://www.brookings.edu/articles/what-irans-1979-revolution-meant-for-us-and-global-oil-markets/ \newline
 \end{hangparas}
+
+\begin{hangparas}{4em}{1}
+\noindent Nguyen, T.-T., Nguyen, H.-G., Lee, J.-Y., Wang, Y.-L., \& Tsai, C.-S. (2023). The consumer price index prediction using machine learning approaches: Evidence from the United States. Heliyon, 9(10), Article e20730. https://doi.org/10.1016/j.heliyon.2023.e20730 \newline
+\end{hangparas}
+
+\begin{hangparas}{4em}{1}
+\noindent Stock, J. H., \& Watson, M. W. (1999). Forecasting inflation. Journal of Monetary Economics, 44(2), 293-335. https://doi.org/10.1016/S0304-3932(99)00027-6 \newline
+\end{hangparas}
+
+\begin{hangparas}{4em}{1}
+\noindent Vaggi, G., \& Groenewegen, P. (2003). Milton Friedman (1912--): Monetarism and its Critics. In Milton Friedman. Palgrave Macmillan UK.\newline
+\end{hangparas}
+
+
+\begin{hangparas}{4em}{1}
+\noindent Williams, M. (2010). Uncontrolled Risk: Lessons of Lehman Brothers and How Systemic Risk Can Still Bring Down the World Financial System. McGraw Hill LLC.\newline
+\end{hangparas}
+
