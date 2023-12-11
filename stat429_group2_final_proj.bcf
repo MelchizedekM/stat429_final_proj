@@ -2347,17 +2347,24 @@
     <bcf:citekey order="1">STOCK1999293</bcf:citekey>
     <bcf:citekey order="2">NGUYEN2023e20730</bcf:citekey>
     <bcf:citekey order="3">BARKAN20231145</bcf:citekey>
-    <bcf:citekey order="4">gross2019iran</bcf:citekey>
-    <bcf:citekey order="5">williams2010uncontrolled</bcf:citekey>
-    <bcf:citekey order="6">forbes_2019_strange_new_world</bcf:citekey>
-    <bcf:citekey order="7">blanchard2004macroeconomics</bcf:citekey>
-    <bcf:citekey order="8">STOCK1999293</bcf:citekey>
-    <bcf:citekey order="9">NGUYEN2023e20730</bcf:citekey>
-    <bcf:citekey order="10">BARKAN20231145</bcf:citekey>
-    <bcf:citekey order="11">gross2019iran</bcf:citekey>
-    <bcf:citekey order="12">williams2010uncontrolled</bcf:citekey>
-    <bcf:citekey order="13">forbes_2019_strange_new_world</bcf:citekey>
-    <bcf:citekey order="14">blanchard2004macroeconomics</bcf:citekey>
+    <bcf:citekey order="4">STOCK1999293</bcf:citekey>
+    <bcf:citekey order="5">NGUYEN2023e20730</bcf:citekey>
+    <bcf:citekey order="6">BARKAN20231145</bcf:citekey>
+    <bcf:citekey order="7">gross2019iran</bcf:citekey>
+    <bcf:citekey order="8">williams2010uncontrolled</bcf:citekey>
+    <bcf:citekey order="9">forbes_2019_strange_new_world</bcf:citekey>
+    <bcf:citekey order="10">blanchard2004macroeconomics</bcf:citekey>
+    <bcf:citekey order="11">inflation1960-1970</bcf:citekey>
+    <bcf:citekey order="12">financial_crisis</bcf:citekey>
+    <bcf:citekey order="13">STOCK1999293</bcf:citekey>
+    <bcf:citekey order="14">NGUYEN2023e20730</bcf:citekey>
+    <bcf:citekey order="15">BARKAN20231145</bcf:citekey>
+    <bcf:citekey order="16">gross2019iran</bcf:citekey>
+    <bcf:citekey order="17">williams2010uncontrolled</bcf:citekey>
+    <bcf:citekey order="18">forbes_2019_strange_new_world</bcf:citekey>
+    <bcf:citekey order="19">blanchard2004macroeconomics</bcf:citekey>
+    <bcf:citekey order="20">inflation1960-1970</bcf:citekey>
+    <bcf:citekey order="21">financial_crisis</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="nty">

@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022) (preloaded format=xelatex 2022.9.14)  10 DEC 2023 20:55
+This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022) (preloaded format=xelatex 2022.9.14)  11 DEC 2023 01:21
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -890,36 +890,37 @@ Package: xurl 2022/01/09 v 0.10 modify URL breaks
 
 xurl: Set penalties for biblatex
 )
-Package translations Info: No language package found. I am going to use `english' as default language. on input line 65.
+Package translations Info: No language package found. I am going to use `english' as default language. on input line 61.
 \@quotelevel=\count468
 \@quotereset=\count469
- (./stat429_group2_final_proj.aux)
+
+No file stat429_group2_final_proj.aux.
 \openout1 = `stat429_group2_final_proj.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 65.
-LaTeX Font Info:    ... okay on input line 65.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 65.
-LaTeX Font Info:    ... okay on input line 65.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 65.
-LaTeX Font Info:    ... okay on input line 65.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 65.
-LaTeX Font Info:    ... okay on input line 65.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 65.
-LaTeX Font Info:    Trying to load font information for TS1+cmr on input line 65.
- (/usr/local/texlive/2022/texmf-dist/tex/latex/base/ts1cmr.fd
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 61.
+LaTeX Font Info:    ... okay on input line 61.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 61.
+LaTeX Font Info:    ... okay on input line 61.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 61.
+LaTeX Font Info:    ... okay on input line 61.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 61.
+LaTeX Font Info:    ... okay on input line 61.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 61.
+LaTeX Font Info:    Trying to load font information for TS1+cmr on input line 61.
+(/usr/local/texlive/2022/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2019/12/16 v2.5j Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 65.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 65.
-LaTeX Font Info:    ... okay on input line 65.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 65.
-LaTeX Font Info:    ... okay on input line 65.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 65.
-LaTeX Font Info:    ... okay on input line 65.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 65.
-LaTeX Font Info:    ... okay on input line 65.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 65.
-LaTeX Font Info:    ... okay on input line 65.
+LaTeX Font Info:    ... okay on input line 61.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 61.
+LaTeX Font Info:    ... okay on input line 61.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 61.
+LaTeX Font Info:    ... okay on input line 61.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 61.
+LaTeX Font Info:    ... okay on input line 61.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 61.
+LaTeX Font Info:    ... okay on input line 61.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 61.
+LaTeX Font Info:    ... okay on input line 61.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: xetex
@@ -964,7 +965,7 @@ Package caption Info: hyperref package is loaded.
 Package caption Info: listings package is loaded.
 Package caption Info: End \AtBeginDocument code.
 \c@lstlisting=\count470
-Package hyperref Info: Link coloring OFF on input line 65.
+Package hyperref Info: Link coloring OFF on input line 61.
  (/usr/local/texlive/2022/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2021-04-02 v2.47 Cross-referencing by name of section
  (/usr/local/texlive/2022/texmf-dist/tex/latex/refcount/refcount.sty
@@ -974,13 +975,17 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
 \c@section@level=\count471
 )
-LaTeX Info: Redefining \ref on input line 65.
-LaTeX Info: Redefining \pageref on input line 65.
-LaTeX Info: Redefining \nameref on input line 65.
- (/usr/local/texlive/2022/texmf-dist/tex/latex/translations/translations-basic-dictionary-english.trsl
+LaTeX Info: Redefining \ref on input line 61.
+LaTeX Info: Redefining \pageref on input line 61.
+LaTeX Info: Redefining \nameref on input line 61.
+
+
+Package hyperref Warning: Rerun to get /PageLabels entry.
+
+(/usr/local/texlive/2022/texmf-dist/tex/latex/translations/translations-basic-dictionary-english.trsl
 File: translations-basic-dictionary-english.trsl (english translation file `translations-basic-dictionary')
 )
-Package translations Info: loading dictionary `translations-basic-dictionary' for `english'. on input line 65.
+Package translations Info: loading dictionary `translations-basic-dictionary' for `english'. on input line 61.
 Package biblatex Info: Trying to load language 'english'...
 Package biblatex Info: ... file 'english.lbx' found.
  (/usr/local/texlive/2022/texmf-dist/tex/latex/biblatex/lbx/english.lbx
@@ -996,175 +1001,208 @@ Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'stat429_group2_final_proj.bbl' not found.
 
 No file stat429_group2_final_proj.bbl.
-Package biblatex Info: Reference section=0 on input line 65.
-Package biblatex Info: Reference segment=0 on input line 65.
-Class apa6 Info: Keywords not defined on input line 67.
-LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 67.
+Package biblatex Info: Reference section=0 on input line 61.
+Package biblatex Info: Reference segment=0 on input line 61.
+Class apa6 Info: Keywords not defined on input line 63.
+LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 63.
 (/usr/local/texlive/2022/texmf-dist/tex/latex/lm/ot1lmr.fd
 File: ot1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OML+lmm on input line 67.
+LaTeX Font Info:    Trying to load font information for OML+lmm on input line 63.
  (/usr/local/texlive/2022/texmf-dist/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 67.
+LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 63.
  (/usr/local/texlive/2022/texmf-dist/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 67.
+LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 63.
  (/usr/local/texlive/2022/texmf-dist/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <12> on input line 67.
+(Font)              <12> on input line 63.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 67.
+(Font)              <8> on input line 63.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 67.
+(Font)              <6> on input line 63.
  [1
 
 ] [2]
 
-LaTeX Warning: Citation 'STOCK1999293' on page 3 undefined on input line 80.
+LaTeX Warning: Citation 'STOCK1999293' on page 3 undefined on input line 83.
 
 
-LaTeX Warning: Citation 'NGUYEN2023e20730' on page 3 undefined on input line 81.
+LaTeX Warning: Citation 'NGUYEN2023e20730' on page 3 undefined on input line 84.
 
 
-LaTeX Warning: Citation 'BARKAN20231145' on page 3 undefined on input line 81.
+LaTeX Warning: Citation 'BARKAN20231145' on page 3 undefined on input line 84.
 
 [3]
+
+LaTeX Warning: Citation 'STOCK1999293' on page 4 undefined on input line 95.
+
+
+LaTeX Warning: Citation 'NGUYEN2023e20730' on page 4 undefined on input line 96.
+
+
+LaTeX Warning: Citation 'BARKAN20231145' on page 4 undefined on input line 96.
+
+[4]
 File: stat429_group2_final_proj_files/figure-latex/unnamed-chunk-1-1.pdf Graphic file (type pdf)
 <use stat429_group2_final_proj_files/figure-latex/unnamed-chunk-1-1.pdf>
 
-Underfull \vbox (badness 1297) has occurred while \output is active []
+Underfull \vbox (badness 5970) has occurred while \output is active []
 
- [4]
+ [5]
 File: stat429_group2_final_proj_files/figure-latex/unnamed-chunk-2-1.pdf Graphic file (type pdf)
 <use stat429_group2_final_proj_files/figure-latex/unnamed-chunk-2-1.pdf>
 
 
-LaTeX Warning: Citation 'gross2019iran' on page 5 undefined on input line 105.
+LaTeX Warning: Citation 'gross2019iran' on page 6 undefined on input line 128.
 
 
-LaTeX Warning: Citation 'williams2010uncontrolled' on page 5 undefined on input line 105.
+LaTeX Warning: Citation 'williams2010uncontrolled' on page 6 undefined on input line 128.
 
 
-LaTeX Warning: Citation 'forbes_2019_strange_new_world' on page 5 undefined on input line 105.
+LaTeX Warning: Citation 'forbes_2019_strange_new_world' on page 6 undefined on input line 128.
+
+[6]
+
+LaTeX Warning: Citation 'blanchard2004macroeconomics' on page 7 undefined on input line 132.
 
 
-LaTeX Warning: Citation 'blanchard2004macroeconomics' on page 5 undefined on input line 109.
-
-[5]
-Overfull \hbox (75.41368pt too wide) detected at line 128
+Overfull \hbox (75.41368pt too wide) detected at line 151
 []
  []
 
 File: stat429_group2_final_proj_files/figure-latex/unnamed-chunk-3-1.pdf Graphic file (type pdf)
 <use stat429_group2_final_proj_files/figure-latex/unnamed-chunk-3-1.pdf>
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [6]
+[7]
 File: stat429_group2_final_proj_files/figure-latex/unnamed-chunk-4-1.pdf Graphic file (type pdf)
 <use stat429_group2_final_proj_files/figure-latex/unnamed-chunk-4-1.pdf>
 
-Overfull \hbox (24.89137pt too wide) in paragraph at lines 142--143
+Overfull \hbox (24.89137pt too wide) in paragraph at lines 170--171
 [][]  
  []
 
 
-Overfull \hbox (75.41368pt too wide) detected at line 152
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [8]
+Overfull \hbox (75.41368pt too wide) detected at line 180
 []
  []
 
-
-Underfull \vbox (badness 5446) has occurred while \output is active []
-
- [7]
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 164.
+(Font)              <10> on input line 194.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 164.
+(Font)              <7> on input line 194.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 164.
+(Font)              <5> on input line 194.
 
-Overfull \hbox (2.7778pt too wide) detected at line 175
+Overfull \hbox (2.7778pt too wide) detected at line 205
 $\OMS/lmsy/m/n/10 ^^@\OT1/lmr/m/n/10 7$
  []
 
 
-Overfull \hbox (2.7778pt too wide) detected at line 176
+Overfull \hbox (2.7778pt too wide) detected at line 206
 $\OMS/lmsy/m/n/10 ^^@\OT1/lmr/m/n/10 5$
  []
 
 
-Overfull \hbox (2.7778pt too wide) detected at line 177
+Overfull \hbox (2.7778pt too wide) detected at line 207
 $\OMS/lmsy/m/n/10 ^^@\OT1/lmr/m/n/10 6$
  []
 
 
-Overfull \hbox (2.7778pt too wide) detected at line 178
+Overfull \hbox (2.7778pt too wide) detected at line 208
 $\OMS/lmsy/m/n/10 ^^@\OT1/lmr/m/n/10 3$
  []
 
 
-Overfull \hbox (7.7778pt too wide) detected at line 180
+Overfull \hbox (7.7778pt too wide) detected at line 210
  $[]$
  []
 
 
-Overfull \hbox (7.7778pt too wide) detected at line 180
+Overfull \hbox (7.7778pt too wide) detected at line 210
   $[]$$\OT1/lmr/m/n/10 2$
  []
 
 
-Overfull \hbox (11.66663pt too wide) detected at line 181
+Overfull \hbox (11.66663pt too wide) detected at line 211
 $\OML/lmm/m/it/10 :\OT1/lmr/m/n/10 000 745$ $[]$
  []
 
 
-Overfull \hbox (11.66663pt too wide) detected at line 182
+Overfull \hbox (11.66663pt too wide) detected at line 212
 $\OML/lmm/m/it/10 :\OT1/lmr/m/n/10 004 470$ $[]$
  []
 
 
-Overfull \hbox (11.66663pt too wide) detected at line 183
+Overfull \hbox (11.66663pt too wide) detected at line 213
 $\OML/lmm/m/it/10 :\OT1/lmr/m/n/10 037 966$ $[]$
  []
 
 
-Overfull \hbox (7.7778pt too wide) detected at line 184
+Overfull \hbox (7.7778pt too wide) detected at line 214
  $[]$
  []
 
 
-Overfull \hbox (7.7778pt too wide) detected at line 184
+Overfull \hbox (7.7778pt too wide) detected at line 214
   $[]$$\OT1/lmr/m/n/10 2$
  []
 
-File: stat429_group2_final_proj_files/figure-latex/unnamed-chunk-5-1.pdf Graphic file (type pdf)
-<use stat429_group2_final_proj_files/figure-latex/unnamed-chunk-5-1.pdf>
-[8]
-File: stat429_group2_final_proj_files/figure-latex/unnamed-chunk-6-1.pdf Graphic file (type pdf)
-<use stat429_group2_final_proj_files/figure-latex/unnamed-chunk-6-1.pdf>
-
-Overfull \hbox (24.89137pt too wide) in paragraph at lines 198--199
-[][]  
- []
-
-File: stat429_group2_final_proj_files/figure-latex/unnamed-chunk-7-1.pdf Graphic file (type pdf)
-<use stat429_group2_final_proj_files/figure-latex/unnamed-chunk-7-1.pdf>
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [9] [10]
+ [9]
+File: stat429_group2_final_proj_files/figure-latex/unnamed-chunk-5-1.pdf Graphic file (type pdf)
+<use stat429_group2_final_proj_files/figure-latex/unnamed-chunk-5-1.pdf>
+File: stat429_group2_final_proj_files/figure-latex/unnamed-chunk-6-1.pdf Graphic file (type pdf)
+<use stat429_group2_final_proj_files/figure-latex/unnamed-chunk-6-1.pdf>
 
-LaTeX Warning: Empty bibliography on input line 228.
+Overfull \hbox (24.89137pt too wide) in paragraph at lines 229--230
+[][]  
+ []
 
-AED endfloat: Processing end Figures and Tables [11] (./stat429_group2_final_proj.aux)
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [10]
+File: stat429_group2_final_proj_files/figure-latex/unnamed-chunk-5-1.pdf Graphic file (type pdf)
+<use stat429_group2_final_proj_files/figure-latex/unnamed-chunk-5-1.pdf>
+
+Underfull \vbox (badness 4505) has occurred while \output is active []
+
+ [11]
+File: stat429_group2_final_proj_files/figure-latex/unnamed-chunk-7-1.pdf Graphic file (type pdf)
+<use stat429_group2_final_proj_files/figure-latex/unnamed-chunk-7-1.pdf>
+
+
+LaTeX Warning: Citation 'inflation1960-1970' on page 12 undefined on input line 247.
+
+
+LaTeX Warning: Citation 'financial_crisis' on page 12 undefined on input line 247.
+
+
+Underfull \vbox (badness 3503) has occurred while \output is active []
+
+ [12]
+File: stat429_group2_final_proj_files/figure-latex/unnamed-chunk-7-1.pdf Graphic file (type pdf)
+<use stat429_group2_final_proj_files/figure-latex/unnamed-chunk-7-1.pdf>
+ [13] [14]
+
+LaTeX Warning: Empty bibliography on input line 276.
+
+AED endfloat: Processing end Figures and Tables [15] (./stat429_group2_final_proj.aux)
 
 LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
 
 Package biblatex Warning: Please (re)run Biber on the file:
@@ -1176,12 +1214,12 @@ Package logreq Info: Writing requests to 'stat429_group2_final_proj.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 34911 strings out of 476179
- 701038 string characters out of 5809544
- 1372714 words of memory out of 5000000
- 55144 multiletter control sequences out of 15000+600000
+ 34912 strings out of 476179
+ 700987 string characters out of 5809544
+ 1368292 words of memory out of 5000000
+ 55147 multiletter control sequences out of 15000+600000
  528686 words of font info for 74 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 84i,12n,89p,859b,1592s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 84i,12n,89p,1333b,1592s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on stat429_group2_final_proj.pdf (11 pages).
+Output written on stat429_group2_final_proj.pdf (15 pages).

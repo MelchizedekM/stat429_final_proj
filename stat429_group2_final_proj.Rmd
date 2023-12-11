@@ -64,16 +64,18 @@ affiliation:
   - id            : "2"
     institution   : "UIUC"
 
-
 authornote: |
   Enter author note here.
 
 abstract: |
-  One or two sentences providing a **basic introduction** to the the problem being addressed by this study. 
-  One sentence summarizing the main result.
-  Two or three sentences explaining what the **main result** reveals in direct comparison to what was thought to be the case previously, or how the  main result adds to previous knowledge.
-  One or two sentences to put the results into a more **general context**.
-  Two or three sentences to provide a **broader perspective**, readily comprehensible to a scientist in any discipline.
+  This study employs time series analysis to investigate the Consumer Price Index (CPI), a crucial economic indicator reflecting changes in the average price level of goods and services. The main result reveals that incorporating economic variables, including the unemployment rate, real consumption, real government spending, and real investment, significantly enhances the prediction of CPI in the time series analysis model. The main result further confirms that positive coefficients for real consumption, real government spending, and real investment while negative for the unemployment rate indicate that these factors contribute to CPI growth aligning with economic theory. The CPI model's statistical significance, accuracy in fitting historical data, and precision in forecasting CPI values highlight the influential role of economic variables in shaping the CPI. This study provides valuable insights into the relationship between economic variables and CPI that may contribute to future research in an economic related field.
+
+
+
+
+
+
+
   
   <!-- https://tinyurl.com/ybremelq -->
 
@@ -268,7 +270,7 @@ where $W_t$ is a white noise.
 
 ## Fitting Results
 
-The fitted result of the model is shown below. The plot shows that the model fits the data well. 
+The fitted result of the model is shown below. 
 
 \begin{smalltable}
     \centering
@@ -305,6 +307,9 @@ consump\_real & 3.423e-03 & 3.337e-04 & 10.259 & < 2e-16 \\
 \]
 
 
+After we add the selected economic variables including the unemployment rate, real consumption, real government spending, and real investment to the model. We generate an overall table above to examine the fit of the variables. From the table above, we can find out all the added economic variables have p-values 0.000745 for the unemployment rate,$<2*10^{-16}$ for real consumption, 0.004470 for real government pending,0.037966 for real investment, therefore, we can conclude that all the added economic variables in the table are statistically significant. For the entire model, we can find out the R squared is 0.9999 which is large enough to conclude that the added economic variables fit the data well, and the p-value for the F test is less than $\alpha$(0.05), therefore, we can conclude that the model is statistically significant. Based on the result above, we can conclude that CPI will be influenced by the unemployment rate, real consumption, real government spending, and real investment. 
+
+
 
 ```{r, results='asis', echo=FALSE}
 model_1.1 <- lm(CPI ~ I(1.05^t) + sin_1 + sin_2 + sin_3 + CPI_lag1 + unemp_rate + grove_exp + invest + consump_real, data = train)
@@ -312,6 +317,8 @@ plot(train[, "t"], fitted(model_1.1), col = "black", type = "l", main = "Fitted 
 lines(train[, "t"], train[, "CPI"], type = "h", col = "red")
 legend("topleft", legend = c("Fitted CPI", "Real CPI"), col = c("blue", "red"), lty = 1:1, cex = 0.8)
 ```
+
+The graph above is the comparison between our model after adding the economic variables and the real CPI versus the time that we can find in the data. The model seems to completely fit with the real CPI. Therefore, the graph further confirms our research and the added economic variables are essential for fitting a CPI model to contribute significantly to the model's precision.
 
 
 
@@ -321,27 +328,27 @@ plot(model_1.1$residuals ~ t, data = train, col = "black", type = "l", main = "R
 acf(model_1.1$residuals, main = "PACF of Residuals of final model", lag.max = 200)
 ```
 
-We can find althought there are still a depression at 2010 but the residuals of the final model seem like a white noise at other point. 
-And the ACF plot shows that most of thecorrelation of residuals are with in the confident interval. 
+To check our model, we perform an analysis of residuals to ensure that the CPI model's predictions are unbiased. We can find out the overall residuals plot shows the difference between predicted CPI values and the real CPI against time. Although a depression in 2010 and a relatively upward trend the 1960 to 1970 is noticeable, the residuals overall resemble white noise at other points, indicating a better fit of the model.[@inflation1960-1970] The reason for the upward trend from 1960 to 1970 may be because of the robust consumer spending after World War II, the low unemployment rate, and Vietnam War spending. All these factors are included in the economic variables added to the model, therefore, these may be the reason for the upward trend. Also, for the noticeable depression before 2010, the reason may be the financial crisis in 2008[@financial_crisis]. These are the cases that are worth the discussion in the future. Additionally, the partial autocorrelation function (PACF) plot demonstrates that the correlations of residuals largely fall within the confidence interval, affirming the CPI model is significant. 
+
 
 ## Forecasting Results
 
-The forecasting result of the model is shown below. The plot shows that the model fits the data well.
+The forecasting result of the model is shown below. The analysis of the percentage prediction errors over time reveals a promising performance of the model in predicting the CPI. The plot illustrates that the errors are consistently small across the entire time range, with the majority of the percentage errors approximately around zero. This indicates a remarkable alignment between the predicted CPI values and the actual CPI values during the test period. Furthermore, the mean squared error is $7.185918*10^{-5}$ which confirms the model's precision. The small errors and low mean squared error suggest that the model has effectively captured the CPI data, showing its reliability in forecasting future CPI values. , the prediction is also a confirmation of the importance of the added economic variables the unemployment rate, real consumption, real government spending, and real investment in the model.
+
   
 ```{r, echo=FALSE,results='hide'}
 pred <- predict(model_1.1, newdata = test)
 error <- (test[, "CPI"] - pred) / test[, "CPI"]
-plot(test[, "t"], error, col = "black", type = "l", main = "Precnet of Predict Error vs. Time", xlab = "Time", ylab = "CPI")
+plot(test[, "t"], error, col = "black", type = "l", main = "Precent of Predict Error vs. Time", xlab = "Time", ylab = "CPI")
 ```
 
 ```{r, echo=FALSE, results='asis', comment=NA}
 cat(sprintf("And the mean square error of the model is %e", mean(error^2)))
 ```
 
-### rest
 
 
-A presentation of the results of your analysis. Interpretations should include a discussion of statistical versus practical import of the results.
+In conclusion, the model's statistical significance, accuracy in fitting historical data, and precision in forecasting CPI values highlight the influential role of economic variables in shaping the CPI. The positive coefficient estimates for real consumption, real government spending, and real investment indicate that an increase in these variables is associated with a rise in the CPI. This aligns with standard economic theory, where increased consumer spending, government expenditure, and investment often contribute to overall economic growth and can lead to higher inflation.Conversely, the negative coefficient estimate for the unemployment rate suggests an inverse relationship with the CPI. Higher unemployment rates tend to be associated with economic downturns, leading to decreased consumer spending and overall demand, which can put downward pressure on prices and inflation. As the analysis encompasses both statistical and practical significance, these findings contribute valuable insights for understanding the relationship between economic variables and the CPI, providing insights for investigation further.
 
 # Discussion
 

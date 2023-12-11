@@ -53,11 +53,7 @@ The authors made the following contributions. Ruiming Min: Conceptualization, Da
 \affiliation{\vspace{0.5cm}\textsuperscript{2} UIUC}
 
 \abstract{%
-One or two sentences providing a \textbf{basic introduction} to the the problem being addressed by this study.
-One sentence summarizing the main result.
-Two or three sentences explaining what the \textbf{main result} reveals in direct comparison to what was thought to be the case previously, or how the main result adds to previous knowledge.
-One or two sentences to put the results into a more \textbf{general context}.
-Two or three sentences to provide a \textbf{broader perspective}, readily comprehensible to a scientist in any discipline.
+This study employs time series analysis to investigate the Consumer Price Index (CPI), a crucial economic indicator reflecting changes in the average price level of goods and services. The main result reveals that incorporating economic variables, including the unemployment rate, real consumption, real government spending, and real investment, significantly enhances the prediction of CPI in the time series analysis model. The main result further confirms that positive coefficients for real consumption, real government spending, and real investment while negative for the unemployment rate indicate that these factors contribute to CPI growth aligning with economic theory. The CPI model's statistical significance, accuracy in fitting historical data, and precision in forecasting CPI values highlight the influential role of economic variables in shaping the CPI. This study provides valuable insights into the relationship between economic variables and CPI that may contribute to future research in an economic related field.
 }
 
 
@@ -65,15 +61,22 @@ Two or three sentences to provide a \textbf{broader perspective}, readily compre
 \begin{document}
 \maketitle
 
-\section{Introduction}\label{introduction}
+\hypertarget{introduction}{%
+\section{Introduction}\label{introduction}}
 
 Economics is a highly applicable field for utilization of time series analysis. The volume of data is abundant and inherently index with time. By using the time series statistical models, we can leverage historical data and catch trends and patterns for the data and make reasonable predictions.
 
+<<<<<<< HEAD
 \subsection{Consumer Price Index (CPI)}\label{consumer-price-index-cpi}
+=======
+\hypertarget{consumer-price-index-cpi}{%
+\subsection{Consumer Price Index (CPI)}\label{consumer-price-index-cpi}}
+>>>>>>> 5323b9808e290ccaec797f66c77be16cb3674278
 
 In this project, we are analyzing the Consumer Price Index (CPI), a widely-used economic indicator that measures changes in the average price level of a basket of goods in an economic entity. It is commonly used to track inflation and assess price changes. A positive CPI value indicates inflation, while a negative value indicates deflation in the market. The goods' prices selected to calculate this index typically represent the overall prices of goods and services in society.
 CPI is calculated relative to the price in the previous time period, which is assigned a value of 100. The percentage difference between the current price and the previous price is reflected in the index using a weighted average formula. Generally, a CPI increase of 3\% is considered inflation, while values over 5\% may indicate significant inflation in the economic entity. There are also some variants of CPI. Such as core CPI which excludes volatile food and energy prices, and regional CPIs, which focus on CPI values in specific geographical areas.
 Given the critical role CPI plays in the economic landscape, we will introduce our approach to explore temporal and seasonal data patterns of CPI.
+<<<<<<< HEAD
 
 \subsection{Related Research}\label{related-research}
 
@@ -83,19 +86,39 @@ In recent years, there are some researches \autocite{NGUYEN2023e20730} \autocite
 \subsection{Data Sources and Analysis Approach}\label{data-sources-and-analysis-approach}
 
 Our primary data sources includes critical economic indicators, including the unemployment rate, government expenditure, investment, and consumption. These indicators play a pivotal role in measuring the level of economic activity within the entity. Furthermore, in our analytical approach, we use lagged and transformed Consumer Purchasing Index values, in conjunction with time-related variables, to enrich the comprehensiveness and precision of our assessments. It's worth noting that all these data elements are aligned with our response variable and are collected on a monthly basis.
+=======
+>>>>>>> 5323b9808e290ccaec797f66c77be16cb3674278
 
-\section{Methods}\label{methods}
+\hypertarget{related-research}{%
+\subsection{Related Research}\label{related-research}}
+
+One of the seminal paper in this field is by James H. Stock\autocite{STOCK1999293}. His research primarily centers around Phillips curve, which describes the connection of inflation and unemployment rate. In our own research, employment stands out as a crucial metrics that we analyze.
+In recent years, there are some researches \autocite{NGUYEN2023e20730} \autocite{BARKAN20231145} employing machine learning and deep neural network for the prediction. These models exists strong performance, particularly with large dataset and when forecasting extended timeframes. However, it is important to note that due to the nature of these complex machine learning models, they often lack interpretability or the ability to provide clear explanations for their predictions.
+
+\hypertarget{data-sources-and-analysis-approach}{%
+\subsection{Data Sources and Analysis Approach}\label{data-sources-and-analysis-approach}}
+
+Our primary data sources includes critical economic indicators, including the unemployment rate, government expenditure, investment, and consumption. These indicators play a pivotal role in measuring the level of economic activity within the entity. Furthermore, in our analytical approach, we use lagged and transformed Consumer Purchasing Index values, in conjunction with time-related variables, to enrich the comprehensiveness and precision of our assessments. It's worth noting that all these data elements are aligned with our response variable and are collected on a monthly basis.
+
+\hypertarget{methods}{%
+\section{Methods}\label{methods}}
 
 To address the problem at hand, we used the following three steps to analyze the data: 1. detrending, 2. lag analysis, 3. adding the economic variables.
 
-\subsection{Detrending}\label{detrending}
+\hypertarget{detrending}{%
+\subsection{Detrending}\label{detrending}}
 
 Observating the original data, the CPI has a significantly exponential trend. So we first use a exponential model to fit the data.
 Moreover, according to the nature of the CPI, which is highly related to inflation rate, and the avarage of inflation rate, we choose 1.05 as the base of the exponential model.
 
 \includegraphics{stat429_group2_final_proj_files/figure-latex/unnamed-chunk-1-1.pdf}
 
+<<<<<<< HEAD
 \subsection{Adding the economic variables}\label{adding-the-economic-variables}
+=======
+\hypertarget{adding-the-economic-variables}{%
+\subsection{Adding the economic variables}\label{adding-the-economic-variables}}
+>>>>>>> 5323b9808e290ccaec797f66c77be16cb3674278
 
 After the detrending and adding the first order lag of CPI, the time series of CPI, \(\{CPI(t)\}\), has became \(CPI(t) = T(t) + CPI(t-1) + Y_t\).
 
@@ -132,7 +155,12 @@ CPI(t) =& a_0 + a_1 \cdot 1.05^t  + a_2 (t-1959)^2 && (\text{trend})\\
 The plot above shows that residuals still dose not behave like a white noise.
 Therefore, we will use ACf to figure out weather or not the data has lags and improve our model.
 
+<<<<<<< HEAD
 \subsection{Lag Analysis}\label{lag-analysis}
+=======
+\hypertarget{lag-analysis}{%
+\subsection{Lag Analysis}\label{lag-analysis}}
+>>>>>>> 5323b9808e290ccaec797f66c77be16cb3674278
 
 After conclude the first model, we use PACF to figure out weather or not the data has lags.
 From the plot below, the data has one lags.
@@ -153,11 +181,13 @@ CPI(t) =& a_0 + a_1 \cdot 1.05^t + a_2 CPI(t-1)  && (\text{trend and lags})\\
 
 where \(W_t\) is a white noise.
 
-\section{Results}\label{results}
+\hypertarget{results}{%
+\section{Results}\label{results}}
 
-\subsection{Fitting Results}\label{fitting-results}
+\hypertarget{fitting-results}{%
+\subsection{Fitting Results}\label{fitting-results}}
 
-The fitted result of the model is shown below. The plot shows that the model fits the data well.
+The fitted result of the model is shown below.
 
 \bgroup \begin{table}[H]\footnotesize
     \centering
@@ -193,6 +223,7 @@ consump\_real & 3.423e-03 & 3.337e-04 & 10.259 & < 2e-16 \\
 \end{aligned}
 \]
 
+<<<<<<< HEAD
 \includegraphics{stat429_group2_final_proj_files/figure-latex/unnamed-chunk-5-1.pdf}
 
 \includegraphics{stat429_group2_final_proj_files/figure-latex/unnamed-chunk-6-1.pdf}
@@ -203,24 +234,41 @@ And the ACF plot shows that most of thecorrelation of residuals are with in the 
 \subsection{Forecasting Results}\label{forecasting-results}
 
 The forecasting result of the model is shown below. The plot shows that the model fits the data well.
+=======
+After we add the selected economic variables including the unemployment rate, real consumption, real government spending, and real investment to the model. We generate an overall table above to examine the fit of the variables. From the table above, we can find out all the added economic variables have p-values 0.000745 for the unemployment rate,\(<2*10^{-16}\) for real consumption, 0.004470 for real government pending,0.037966 for real investment, therefore, we can conclude that all the added economic variables in the table are statistically significant. For the entire model, we can find out the R squared is 0.9999 which is large enough to conclude that the added economic variables fit the data well, and the p-value for the F test is less than \(\alpha\)(0.05), therefore, we can conclude that the model is statistically significant. Based on the result above, we can conclude that CPI will be influenced by the unemployment rate, real consumption, real government spending, and real investment.
+
+\includegraphics{stat429_group2_final_proj_files/figure-latex/unnamed-chunk-5-1.pdf}
+
+The graph above is the comparison between our model after adding the economic variables and the real CPI versus the time that we can find in the data. The model seems to completely fit with the real CPI. Therefore, the graph further confirms our research and the added economic variables are essential for fitting a CPI model to contribute significantly to the model's precision.
+>>>>>>> 5323b9808e290ccaec797f66c77be16cb3674278
+
+\includegraphics{stat429_group2_final_proj_files/figure-latex/unnamed-chunk-7-1.pdf}
+
+To check our model, we perform an analysis of residuals to ensure that the CPI model's predictions are unbiased. We can find out the overall residuals plot shows the difference between predicted CPI values and the real CPI against time. Although a depression in 2010 and a relatively upward trend the 1960 to 1970 is noticeable, the residuals overall resemble white noise at other points, indicating a better fit of the model.\autocite{inflation1960-1970} The reason for the upward trend from 1960 to 1970 may be because of the robust consumer spending after World War II, the low unemployment rate, and Vietnam War spending. All these factors are included in the economic variables added to the model, therefore, these may be the reason for the upward trend. Also, for the noticeable depression before 2010, the reason may be the financial crisis in 2008\autocite{financial_crisis}. These are the cases that are worth the discussion in the future. Additionally, the partial autocorrelation function (PACF) plot demonstrates that the correlations of residuals largely fall within the confidence interval, affirming the CPI model is significant.
+
+\hypertarget{forecasting-results}{%
+\subsection{Forecasting Results}\label{forecasting-results}}
+
+The forecasting result of the model is shown below. The analysis of the percentage prediction errors over time reveals a promising performance of the model in predicting the CPI. The plot illustrates that the errors are consistently small across the entire time range, with the majority of the percentage errors approximately around zero. This indicates a remarkable alignment between the predicted CPI values and the actual CPI values during the test period. Furthermore, the mean squared error is \(7.185918*10^{-5}\) which confirms the model's precision. The small errors and low mean squared error suggest that the model has effectively captured the CPI data, showing its reliability in forecasting future CPI values. , the prediction is also a confirmation of the importance of the added economic variables the unemployment rate, real consumption, real government spending, and real investment in the model.
 
 \includegraphics{stat429_group2_final_proj_files/figure-latex/unnamed-chunk-7-1.pdf}
 
 And the mean square error of the model is 7.185918e-05
 
-\subsubsection{rest}\label{rest}
+In conclusion, the model's statistical significance, accuracy in fitting historical data, and precision in forecasting CPI values highlight the influential role of economic variables in shaping the CPI. The positive coefficient estimates for real consumption, real government spending, and real investment indicate that an increase in these variables is associated with a rise in the CPI. This aligns with standard economic theory, where increased consumer spending, government expenditure, and investment often contribute to overall economic growth and can lead to higher inflation.Conversely, the negative coefficient estimate for the unemployment rate suggests an inverse relationship with the CPI. Higher unemployment rates tend to be associated with economic downturns, leading to decreased consumer spending and overall demand, which can put downward pressure on prices and inflation. As the analysis encompasses both statistical and practical significance, these findings contribute valuable insights for understanding the relationship between economic variables and the CPI, providing insights for investigation further.
 
-A presentation of the results of your analysis. Interpretations should include a discussion of statistical versus practical import of the results.
-
-\section{Discussion}\label{discussion}
+\hypertarget{discussion}{%
+\section{Discussion}\label{discussion}}
 
 A synopsis of your findings and any limitations your study may suffer from.
 
 \newpage
 
-\section{References}\label{references}
+\hypertarget{references}{%
+\section{References}\label{references}}
 
-\section{Appendix (Optional)}\label{appendix-optional}
+\hypertarget{appendix-optional}{%
+\section{Appendix (Optional)}\label{appendix-optional}}
 
 Any R codes or less important R outputs that you wanted to keep- can go in here.
 
