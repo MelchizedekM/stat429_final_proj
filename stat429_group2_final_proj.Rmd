@@ -350,8 +350,19 @@ cat(sprintf("And the mean square error of the model is %e", mean(error^2)))
 In conclusion, the model's statistical significance, accuracy in fitting historical data, and precision in forecasting CPI values highlight the influential role of economic variables in shaping the CPI. The positive coefficient estimates for real consumption, real government spending, and real investment indicate that an increase in these variables is associated with a rise in the CPI. This aligns with standard economic theory, where increased consumer spending, government expenditure, and investment often contribute to overall economic growth and can lead to higher inflation.Conversely, the negative coefficient estimate for the unemployment rate suggests an inverse relationship with the CPI. Higher unemployment rates tend to be associated with economic downturns, leading to decreased consumer spending and overall demand, which can put downward pressure on prices and inflation. As the analysis encompasses both statistical and practical significance, these findings contribute valuable insights for understanding the relationship between economic variables and the CPI, providing insights for investigation further.
 
 # Discussion
+## Main summary of the current study
+By running a time series analysis on incorporated economic variables: unemployment rate, real consumption, real government spending, and real investment, it is evidently shown these economic variables are significant in predicting CPI. The model:[复制latex], shows great accuracy in predicting CPI, revealing the importance of the model in capturing CPI trends.
 
-A synopsis of your findings and any limitations your study may suffer from.
+
+## Other famous research or academic outcomes
+The model we concluded aligns with Keynesian economic theory[cite], which also concludes that government spending, unemployment, and other common factors play an important role in economic performance, reflected in inflation. The Milton Friedman’s Monetarist critique[cite] also indicates the positive relationship between real consumption and inflation rate. The conclusions of these two theories are consistent with the findings of this study.
+
+## Flaws in the current study
+The study lacks investigation into other common factors influencing CPI. For example, international trade dynamics or other economic unexpected events. The main method this study uses to conduct statistical analysis is time series analysis. However, it is possible the evolving economic factors’ own nature overlooks the factor of time, resulting in an inappropriate method of conducting an investigation due to the evolving nature of economic factors. Another possible issue is the near-perfect R-squared value, which could possibly indicate the sign of overfitting, indicating a lack of generalization of unseen data.
+
+## Suggestions on future, additional future.
+The major suggestion is to continue investigating other economic factors, like international trade dynamics, and exchange rates, to have a deeper insight into how economic factors impact CPI. Based on the near-perfect R-squared value of this study, the model could apply regularization techniques to detect and prevent the problem of overfitting. By the nature of economic variables, the future study could take a deeper look into some unexpected events and apply the developed model, too, which could validate the model’s effectiveness. These suggestions will help build a more solid understanding of CPI.
+
 
 \newpage
 
