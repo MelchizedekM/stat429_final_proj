@@ -53,7 +53,7 @@ if(nrow(data) > 1) {
     ggplot(data, aes(x = t, y = CPI)) + 
       geom_line(color = "blue") +
       geom_line(aes(y = fitted_CPI_0), color = "red") +
-      labs(title = "Inflation rate and fitted values", x = "Year", y = "Inflation rate") +
+      labs(title = "CPI and fitted values", x = "Year", y = "CPI") +
       theme(plot.title = element_text(hjust = 0.5))
   } else {
     # If lengths don't match, print a message
