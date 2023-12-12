@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022) (preloaded format=xelatex 2022.9.14)  11 DEC 2023 01:21
+=======
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.6.23)  11 DEC 2023 15:47
+>>>>>>> dfa3f65b7b9abfdd1f08e7b0edcf2bf536077dd8
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -653,12 +657,31 @@ Package: array 2021/10/04 v2.5f Tabular extension package (FMi)
 \ar@mcellbox=\box78
 \extrarowheight=\dimen303
 \NC@list=\toks45
+<<<<<<< HEAD
 \extratabsurround=\skip83
 \backup@length=\skip84
 \ar@cellbox=\box79
 )) (/usr/local/texlive/2022/texmf-dist/tex/latex/biblatex/biblatex.sty
 Package: biblatex 2022/02/02 v3.17 programmable bibliographies (PK/MW)
  (/usr/local/texlive/2022/texmf-dist/tex/latex/logreq/logreq.sty
+=======
+\extratabsurround=\skip84
+\backup@length=\skip85
+\ar@cellbox=\box80
+)) (/usr/local/texlive/2023/texmf-dist/tex/latex/hanging/hanging.sty
+Package: hanging 2009/09/02 v1.2b hanging paragraphs and punctuation
+\h@ngcommawd=\skip86
+\h@ngfstopwd=\skip87
+\h@ngquotewd=\skip88
+\h@ngdquotewd=\skip89
+\h@ngquerywd=\skip90
+\h@ngexclwd=\skip91
+\h@ngcolonwd=\skip92
+\h@ngscolonwd=\skip93
+) (/usr/local/texlive/2023/texmf-dist/tex/latex/biblatex/biblatex.sty
+Package: biblatex 2023/03/05 v3.19 programmable bibliographies (PK/MW)
+(/usr/local/texlive/2023/texmf-dist/tex/latex/logreq/logreq.sty
+>>>>>>> dfa3f65b7b9abfdd1f08e7b0edcf2bf536077dd8
 Package: logreq 2010/08/04 v1.0 xml request logger
 \lrq@indent=\count342
  (/usr/local/texlive/2022/texmf-dist/tex/latex/logreq/logreq.def
@@ -666,6 +689,7 @@ File: logreq.def 2010/08/04 v1.0 logreq spec v1.0
 )) (/usr/local/texlive/2022/texmf-dist/tex/latex/base/ifthen.sty
 Package: ifthen 2020/11/24 v1.1c Standard LaTeX ifthen package (DPC)
 )
+<<<<<<< HEAD
 \c@tabx@nest=\count343
 \c@listtotal=\count344
 \c@listcount=\count345
@@ -716,6 +740,59 @@ Package: ifthen 2020/11/24 v1.1c Standard LaTeX ifthen package (DPC)
 \bibinitsep=\skip90
 \bibparsep=\skip91
 \bibhang=\skip92
+=======
+\c@tabx@nest=\count341
+\c@listtotal=\count342
+\c@listcount=\count343
+\c@liststart=\count344
+\c@liststop=\count345
+\c@citecount=\count346
+\c@citetotal=\count347
+\c@multicitecount=\count348
+\c@multicitetotal=\count349
+\c@instcount=\count350
+\c@maxnames=\count351
+\c@minnames=\count352
+\c@maxitems=\count353
+\c@minitems=\count354
+\c@citecounter=\count355
+\c@maxcitecounter=\count356
+\c@savedcitecounter=\count357
+\c@uniquelist=\count358
+\c@uniquename=\count359
+\c@refsection=\count360
+\c@refsegment=\count361
+\c@maxextratitle=\count362
+\c@maxextratitleyear=\count363
+\c@maxextraname=\count364
+\c@maxextradate=\count365
+\c@maxextraalpha=\count366
+\c@abbrvpenalty=\count367
+\c@highnamepenalty=\count368
+\c@lownamepenalty=\count369
+\c@maxparens=\count370
+\c@parenlevel=\count371
+\blx@tempcnta=\count372
+\blx@tempcntb=\count373
+\blx@tempcntc=\count374
+\c@blx@maxsection=\count375
+\blx@maxsegment@0=\count376
+\blx@notetype=\count377
+\blx@parenlevel@text=\count378
+\blx@parenlevel@foot=\count379
+\blx@sectionciteorder@0=\count380
+\blx@sectionciteorderinternal@0=\count381
+\blx@entrysetcounter=\count382
+\blx@biblioinstance=\count383
+\labelnumberwidth=\skip94
+\labelalphawidth=\skip95
+\biblabelsep=\skip96
+\bibitemsep=\skip97
+\bibnamesep=\skip98
+\bibinitsep=\skip99
+\bibparsep=\skip100
+\bibhang=\skip101
+>>>>>>> dfa3f65b7b9abfdd1f08e7b0edcf2bf536077dd8
 \blx@bcfin=\read3
 \blx@bcfout=\write6
 \blx@langwohyphens=\language87
@@ -729,6 +806,7 @@ File: blx-dm.def 2022/02/02 v3.17 biblatex localization (PK/MW)
 )
 Package biblatex Info: Trying to load biblatex custom data model...
 Package biblatex Info: ... file 'biblatex-dm.cfg' not found.
+<<<<<<< HEAD
 \c@afterword=\count388
 \c@savedafterword=\count389
 \c@annotator=\count390
@@ -811,6 +889,90 @@ Package biblatex Info: ... file 'biblatex-dm.cfg' not found.
 \localshorttitlewidth=\skip104
 \localshortauthorwidth=\skip105
 \localshorteditorwidth=\skip106
+=======
+\c@afterword=\count387
+\c@savedafterword=\count388
+\c@annotator=\count389
+\c@savedannotator=\count390
+\c@author=\count391
+\c@savedauthor=\count392
+\c@bookauthor=\count393
+\c@savedbookauthor=\count394
+\c@commentator=\count395
+\c@savedcommentator=\count396
+\c@editor=\count397
+\c@savededitor=\count398
+\c@editora=\count399
+\c@savededitora=\count400
+\c@editorb=\count401
+\c@savededitorb=\count402
+\c@editorc=\count403
+\c@savededitorc=\count404
+\c@foreword=\count405
+\c@savedforeword=\count406
+\c@holder=\count407
+\c@savedholder=\count408
+\c@introduction=\count409
+\c@savedintroduction=\count410
+\c@namea=\count411
+\c@savednamea=\count412
+\c@nameb=\count413
+\c@savednameb=\count414
+\c@namec=\count415
+\c@savednamec=\count416
+\c@translator=\count417
+\c@savedtranslator=\count418
+\c@shortauthor=\count419
+\c@savedshortauthor=\count420
+\c@shorteditor=\count421
+\c@savedshorteditor=\count422
+\c@labelname=\count423
+\c@savedlabelname=\count424
+\c@institution=\count425
+\c@savedinstitution=\count426
+\c@lista=\count427
+\c@savedlista=\count428
+\c@listb=\count429
+\c@savedlistb=\count430
+\c@listc=\count431
+\c@savedlistc=\count432
+\c@listd=\count433
+\c@savedlistd=\count434
+\c@liste=\count435
+\c@savedliste=\count436
+\c@listf=\count437
+\c@savedlistf=\count438
+\c@location=\count439
+\c@savedlocation=\count440
+\c@organization=\count441
+\c@savedorganization=\count442
+\c@origlocation=\count443
+\c@savedoriglocation=\count444
+\c@origpublisher=\count445
+\c@savedorigpublisher=\count446
+\c@publisher=\count447
+\c@savedpublisher=\count448
+\c@language=\count449
+\c@savedlanguage=\count450
+\c@origlanguage=\count451
+\c@savedoriglanguage=\count452
+\c@pageref=\count453
+\c@savedpageref=\count454
+\shorthandwidth=\skip102
+\shortjournalwidth=\skip103
+\shortserieswidth=\skip104
+\shorttitlewidth=\skip105
+\shortauthorwidth=\skip106
+\shorteditorwidth=\skip107
+\locallabelnumberwidth=\skip108
+\locallabelalphawidth=\skip109
+\localshorthandwidth=\skip110
+\localshortjournalwidth=\skip111
+\localshortserieswidth=\skip112
+\localshorttitlewidth=\skip113
+\localshortauthorwidth=\skip114
+\localshorteditorwidth=\skip115
+>>>>>>> dfa3f65b7b9abfdd1f08e7b0edcf2bf536077dd8
 Package biblatex Info: Trying to load enhanced support for Unicode engines...
 Package biblatex Info: ... file 'blx-unicode.def' found.
  (/usr/local/texlive/2022/texmf-dist/tex/latex/biblatex/blx-unicode.def)
@@ -890,6 +1052,7 @@ Package: xurl 2022/01/09 v 0.10 modify URL breaks
 
 xurl: Set penalties for biblatex
 )
+<<<<<<< HEAD
 Package translations Info: No language package found. I am going to use `english' as default language. on input line 61.
 \@quotelevel=\count468
 \@quotereset=\count469
@@ -922,6 +1085,40 @@ LaTeX Font Info:    ... okay on input line 61.
 LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 61.
 LaTeX Font Info:    ... okay on input line 61.
 
+=======
+Package translations Info: No language package found. I am going to use `englis
+h' as default language. on input line 66.
+\@quotelevel=\count471
+\@quotereset=\count472
+(./stat429_group2_final_proj.aux)
+\openout1 = `stat429_group2_final_proj.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 66.
+LaTeX Font Info:    ... okay on input line 66.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 66.
+LaTeX Font Info:    ... okay on input line 66.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 66.
+LaTeX Font Info:    ... okay on input line 66.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 66.
+LaTeX Font Info:    ... okay on input line 66.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 66.
+LaTeX Font Info:    Trying to load font information for TS1+cmr on input line 6
+6.
+(/usr/local/texlive/2023/texmf-dist/tex/latex/base/ts1cmr.fd
+File: ts1cmr.fd 2022/07/10 v2.5l Standard LaTeX font definitions
+)
+LaTeX Font Info:    ... okay on input line 66.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 66.
+LaTeX Font Info:    ... okay on input line 66.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 66.
+LaTeX Font Info:    ... okay on input line 66.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 66.
+LaTeX Font Info:    ... okay on input line 66.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 66.
+LaTeX Font Info:    ... okay on input line 66.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 66.
+LaTeX Font Info:    ... okay on input line 66.
+>>>>>>> dfa3f65b7b9abfdd1f08e7b0edcf2bf536077dd8
 *geometry* driver: auto-detecting
 *geometry* detected driver: xetex
 *geometry* verbose mode - [ preamble ] result:
@@ -964,6 +1161,7 @@ Package caption Info: float package is loaded.
 Package caption Info: hyperref package is loaded.
 Package caption Info: listings package is loaded.
 Package caption Info: End \AtBeginDocument code.
+<<<<<<< HEAD
 \c@lstlisting=\count470
 Package hyperref Info: Link coloring OFF on input line 61.
  (/usr/local/texlive/2022/texmf-dist/tex/latex/hyperref/nameref.sty
@@ -986,6 +1184,18 @@ Package hyperref Warning: Rerun to get /PageLabels entry.
 File: translations-basic-dictionary-english.trsl (english translation file `translations-basic-dictionary')
 )
 Package translations Info: loading dictionary `translations-basic-dictionary' for `english'. on input line 61.
+=======
+\c@lstlisting=\count473
+Package hyperref Info: Link coloring OFF on input line 66.
+
+(/usr/local/texlive/2023/texmf-dist/tex/latex/translations/translations-basic-d
+ictionary-english.trsl
+File: translations-basic-dictionary-english.trsl (english translation file `tra
+nslations-basic-dictionary')
+)
+Package translations Info: loading dictionary `translations-basic-dictionary' f
+or `english'. on input line 66.
+>>>>>>> dfa3f65b7b9abfdd1f08e7b0edcf2bf536077dd8
 Package biblatex Info: Trying to load language 'english'...
 Package biblatex Info: ... file 'english.lbx' found.
  (/usr/local/texlive/2022/texmf-dist/tex/latex/biblatex/lbx/english.lbx
@@ -998,6 +1208,7 @@ Package biblatex Info: Automatic encoding selection.
 \openout6 = `stat429_group2_final_proj.bcf'.
 
 Package biblatex Info: Trying to load bibliographic data...
+<<<<<<< HEAD
 Package biblatex Info: ... file 'stat429_group2_final_proj.bbl' not found.
 
 No file stat429_group2_final_proj.bbl.
@@ -1083,10 +1294,74 @@ File: stat429_group2_final_proj_files/figure-latex/unnamed-chunk-4-1.pdf Graphic
 <use stat429_group2_final_proj_files/figure-latex/unnamed-chunk-4-1.pdf>
 
 Overfull \hbox (24.89137pt too wide) in paragraph at lines 170--171
+=======
+Package biblatex Info: ... file 'stat429_group2_final_proj.bbl' found.
+(./stat429_group2_final_proj.bbl)
+Package biblatex Info: Reference section=0 on input line 66.
+Package biblatex Info: Reference segment=0 on input line 66.
+Class apa6 Info: Keywords not defined on input line 68.
+LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 6
+8.
+(/usr/local/texlive/2023/texmf-dist/tex/latex/lm/ot1lmr.fd
+File: ot1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+LaTeX Font Info:    Trying to load font information for OML+lmm on input line 6
+8.
+(/usr/local/texlive/2023/texmf-dist/tex/latex/lm/omllmm.fd
+File: omllmm.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 
+68.
+(/usr/local/texlive/2023/texmf-dist/tex/latex/lm/omslmsy.fd
+File: omslmsy.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 
+68.
+(/usr/local/texlive/2023/texmf-dist/tex/latex/lm/omxlmex.fd
+File: omxlmex.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <12> on input line 68.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <8> on input line 68.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <6> on input line 68.
+[1
+
+] [2] [3]
+File: stat429_group2_final_proj_files/figure-latex/unnamed-chunk-1-1.pdf Graphi
+c file (type pdf)
+<use stat429_group2_final_proj_files/figure-latex/unnamed-chunk-1-1.pdf>
+
+Underfull \vbox (badness 1297) has occurred while \output is active []
+
+[4]
+File: stat429_group2_final_proj_files/figure-latex/unnamed-chunk-2-1.pdf Graphi
+c file (type pdf)
+<use stat429_group2_final_proj_files/figure-latex/unnamed-chunk-2-1.pdf>
+[5]
+Overfull \hbox (75.41368pt too wide) detected at line 136
+[]
+ []
+
+File: stat429_group2_final_proj_files/figure-latex/unnamed-chunk-3-1.pdf Graphi
+c file (type pdf)
+<use stat429_group2_final_proj_files/figure-latex/unnamed-chunk-3-1.pdf>
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[6]
+File: stat429_group2_final_proj_files/figure-latex/unnamed-chunk-4-1.pdf Graphi
+c file (type pdf)
+<use stat429_group2_final_proj_files/figure-latex/unnamed-chunk-4-1.pdf>
+
+Overfull \hbox (24.89137pt too wide) in paragraph at lines 151--152
+>>>>>>> dfa3f65b7b9abfdd1f08e7b0edcf2bf536077dd8
 [][]  
  []
 
 
+<<<<<<< HEAD
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [8]
@@ -1102,35 +1377,74 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <5> on input line 194.
 
 Overfull \hbox (2.7778pt too wide) detected at line 205
+=======
+Overfull \hbox (75.41368pt too wide) detected at line 161
+[]
+ []
+
+
+Underfull \vbox (badness 5446) has occurred while \output is active []
+
+[7]
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <10> on input line 175.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <7> on input line 175.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <5> on input line 175.
+
+Overfull \hbox (2.7778pt too wide) detected at line 186
+>>>>>>> dfa3f65b7b9abfdd1f08e7b0edcf2bf536077dd8
 $\OMS/lmsy/m/n/10 ^^@\OT1/lmr/m/n/10 7$
  []
 
 
+<<<<<<< HEAD
 Overfull \hbox (2.7778pt too wide) detected at line 206
+=======
+Overfull \hbox (2.7778pt too wide) detected at line 187
+>>>>>>> dfa3f65b7b9abfdd1f08e7b0edcf2bf536077dd8
 $\OMS/lmsy/m/n/10 ^^@\OT1/lmr/m/n/10 5$
  []
 
 
+<<<<<<< HEAD
 Overfull \hbox (2.7778pt too wide) detected at line 207
+=======
+Overfull \hbox (2.7778pt too wide) detected at line 188
+>>>>>>> dfa3f65b7b9abfdd1f08e7b0edcf2bf536077dd8
 $\OMS/lmsy/m/n/10 ^^@\OT1/lmr/m/n/10 6$
  []
 
 
+<<<<<<< HEAD
 Overfull \hbox (2.7778pt too wide) detected at line 208
+=======
+Overfull \hbox (2.7778pt too wide) detected at line 189
+>>>>>>> dfa3f65b7b9abfdd1f08e7b0edcf2bf536077dd8
 $\OMS/lmsy/m/n/10 ^^@\OT1/lmr/m/n/10 3$
  []
 
 
+<<<<<<< HEAD
 Overfull \hbox (7.7778pt too wide) detected at line 210
+=======
+Overfull \hbox (7.7778pt too wide) detected at line 191
+>>>>>>> dfa3f65b7b9abfdd1f08e7b0edcf2bf536077dd8
  $[]$
  []
 
 
+<<<<<<< HEAD
 Overfull \hbox (7.7778pt too wide) detected at line 210
+=======
+Overfull \hbox (7.7778pt too wide) detected at line 191
+>>>>>>> dfa3f65b7b9abfdd1f08e7b0edcf2bf536077dd8
   $[]$$\OT1/lmr/m/n/10 2$
  []
 
 
+<<<<<<< HEAD
 Overfull \hbox (11.66663pt too wide) detected at line 211
 $\OML/lmm/m/it/10 :\OT1/lmr/m/n/10 000 745$ $[]$
  []
@@ -1147,10 +1461,29 @@ $\OML/lmm/m/it/10 :\OT1/lmr/m/n/10 037 966$ $[]$
 
 
 Overfull \hbox (7.7778pt too wide) detected at line 214
+=======
+Overfull \hbox (11.66663pt too wide) detected at line 192
+$\OML/lmm/m/it/10 :\OT1/lmr/m/n/10 000 745$ $ []$
+ []
+
+
+Overfull \hbox (11.66663pt too wide) detected at line 193
+$\OML/lmm/m/it/10 :\OT1/lmr/m/n/10 004 470$ $ []$
+ []
+
+
+Overfull \hbox (11.66663pt too wide) detected at line 194
+$\OML/lmm/m/it/10 :\OT1/lmr/m/n/10 037 966$ $ []$
+ []
+
+
+Overfull \hbox (7.7778pt too wide) detected at line 195
+>>>>>>> dfa3f65b7b9abfdd1f08e7b0edcf2bf536077dd8
  $[]$
  []
 
 
+<<<<<<< HEAD
 Overfull \hbox (7.7778pt too wide) detected at line 214
   $[]$$\OT1/lmr/m/n/10 2$
  []
@@ -1165,12 +1498,28 @@ File: stat429_group2_final_proj_files/figure-latex/unnamed-chunk-6-1.pdf Graphic
 <use stat429_group2_final_proj_files/figure-latex/unnamed-chunk-6-1.pdf>
 
 Overfull \hbox (24.89137pt too wide) in paragraph at lines 229--230
+=======
+Overfull \hbox (7.7778pt too wide) detected at line 195
+  $[]$$\OT1/lmr/m/n/10 2$
+ []
+
+[8]
+File: stat429_group2_final_proj_files/figure-latex/unnamed-chunk-5-1.pdf Graphi
+c file (type pdf)
+<use stat429_group2_final_proj_files/figure-latex/unnamed-chunk-5-1.pdf>
+File: stat429_group2_final_proj_files/figure-latex/unnamed-chunk-6-1.pdf Graphi
+c file (type pdf)
+<use stat429_group2_final_proj_files/figure-latex/unnamed-chunk-6-1.pdf>
+
+Overfull \hbox (24.89137pt too wide) in paragraph at lines 213--214
+>>>>>>> dfa3f65b7b9abfdd1f08e7b0edcf2bf536077dd8
 [][]  
  []
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
+<<<<<<< HEAD
  [10]
 File: stat429_group2_final_proj_files/figure-latex/unnamed-chunk-5-1.pdf Graphic file (type pdf)
 <use stat429_group2_final_proj_files/figure-latex/unnamed-chunk-5-1.pdf>
@@ -1209,11 +1558,35 @@ Package biblatex Warning: Please (re)run Biber on the file:
 (biblatex)                stat429_group2_final_proj
 (biblatex)                and rerun LaTeX afterwards.
 
+=======
+[9] [10]
+File: stat429_group2_final_proj_files/figure-latex/unnamed-chunk-7-1.pdf Graphi
+c file (type pdf)
+<use stat429_group2_final_proj_files/figure-latex/unnamed-chunk-7-1.pdf>
+
+Underfull \vbox (badness 1173) has occurred while \output is active []
+
+[11]
+Overfull \hbox (75.41368pt too wide) detected at line 240
+[]
+ []
+
+
+Underfull \vbox (badness 1147) has occurred while \output is active []
+
+[12] [13] [14]
+
+LaTeX Warning: Empty bibliography on input line 308.
+
+AED endfloat: Processing end Figures and Tables [15] (./stat429_group2_final_pr
+oj.aux)
+>>>>>>> dfa3f65b7b9abfdd1f08e7b0edcf2bf536077dd8
 Package logreq Info: Writing requests to 'stat429_group2_final_proj.run.xml'.
 \openout1 = `stat429_group2_final_proj.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
+<<<<<<< HEAD
  34912 strings out of 476179
  700987 string characters out of 5809544
  1368292 words of memory out of 5000000
@@ -1221,5 +1594,14 @@ Here is how much of TeX's memory you used:
  528686 words of font info for 74 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  84i,12n,89p,1333b,1592s stack positions out of 10000i,1000n,20000p,200000b,200000s
+=======
+ 35156 strings out of 476683
+ 709457 string characters out of 5804047
+ 1864018 words of memory out of 5000000
+ 54886 multiletter control sequences out of 15000+600000
+ 571714 words of font info for 78 fonts, out of 8000000 for 9000
+ 1348 hyphenation exceptions out of 8191
+ 84i,13n,89p,1197b,813s stack positions out of 10000i,1000n,20000p,200000b,200000s
+>>>>>>> dfa3f65b7b9abfdd1f08e7b0edcf2bf536077dd8
 
 Output written on stat429_group2_final_proj.pdf (15 pages).

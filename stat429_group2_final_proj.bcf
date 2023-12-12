@@ -2344,6 +2344,7 @@
     <bcf:datasource type="file" datatype="bibtex" glob="false">r-references.bib</bcf:datasource>
   </bcf:bibdata>
   <bcf:section number="0">
+<<<<<<< HEAD
     <bcf:citekey order="1">STOCK1999293</bcf:citekey>
     <bcf:citekey order="2">NGUYEN2023e20730</bcf:citekey>
     <bcf:citekey order="3">BARKAN20231145</bcf:citekey>
@@ -2365,6 +2366,8 @@
     <bcf:citekey order="19">blanchard2004macroeconomics</bcf:citekey>
     <bcf:citekey order="20">inflation1960-1970</bcf:citekey>
     <bcf:citekey order="21">financial_crisis</bcf:citekey>
+=======
+>>>>>>> dfa3f65b7b9abfdd1f08e7b0edcf2bf536077dd8
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="nty">

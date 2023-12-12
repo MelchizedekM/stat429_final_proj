@@ -20,6 +20,7 @@
 \usepackage{siunitx}
 \usepackage{float}
 \newenvironment{smalltable}{\begin{table}[H]\footnotesize}{\end{table}}
+\usepackage{hanging}
 \ifLuaTeX
   \usepackage{selnolig}  % disable illegal ligatures
 \fi
@@ -44,16 +45,20 @@
 
 \authornote{
 
-Enter author note here.
+NetIDs
+RuiMing Min:rmin4
+Zicheng Wang:zw70
+Qi Yang:qiy4
+Shumeng Zhang:sz65
 
-The authors made the following contributions. Ruiming Min: Conceptualization, Data curation, Resources, Formal Analysis, Methodology, Writing - Original Draft Preparation, Writing - Review \& Editing; Zicheng Wang: role 3, role 4; Qi Yang: role 1, role 2; Shumeng Zhang: role 3, role 4.
+The authors made the following contributions. Ruiming Min: Conceptualization, Data curation, Resources, Formal Analysis, Methodology, Writing - Original Draft Preparation, Writing - Review \& Editing; Zicheng Wang: Writing - Discussion, phrase, grammar, Final review and provide suggestions, Writing - Citation and Reference management; Qi Yang: Writing - Abstract \& Result comment \& report, Writing - Review \& Editing; Shumeng Zhang: Writing - Introduction, Writing - Review \& Editing.
 
 }
 
-\affiliation{\vspace{0.5cm}\textsuperscript{2} UIUC}
+\affiliation{\vspace{0.5cm}\textsuperscript{5} UIUC}
 
 \abstract{%
-This study employs time series analysis to investigate the Consumer Price Index (CPI), a crucial economic indicator reflecting changes in the average price level of goods and services. The main result reveals that incorporating economic variables, including the unemployment rate, real consumption, real government spending, and real investment, significantly enhances the prediction of CPI in the time series analysis model. The main result further confirms that positive coefficients for real consumption, real government spending, and real investment while negative for the unemployment rate indicate that these factors contribute to CPI growth aligning with economic theory. The CPI model's statistical significance, accuracy in fitting historical data, and precision in forecasting CPI values highlight the influential role of economic variables in shaping the CPI. This study provides valuable insights into the relationship between economic variables and CPI that may contribute to future research in an economic related field.
+This study employs time series analysis to investigate the Consumer Price Index (CPI), a crucial economic indicator reflecting changes in the average price level of goods and services. The main result reveals that incorporating economic variables, including the unemployment rate, real consumption, real government spending, and real investment, significantly enhances the prediction of CPI in the time series analysis model. The main result further confirms that positive coefficients for real consumption, real government spending, and real investment while negative for the unemployment rate indicate that these factors contribute to CPI growth aligning with economic theory. The CPI model's statistical significance, accuracy in fitting historical data, and precision in forecasting CPI values highlight the influential role of economic variables in shaping the CPI. This study provides valuable insights into the relationship between economic variables and CPI that may contribute to future research in an economic-related field, and provides an interpretable way of capturing CPI.
 }
 
 
@@ -64,7 +69,7 @@ This study employs time series analysis to investigate the Consumer Price Index 
 \hypertarget{introduction}{%
 \section{Introduction}\label{introduction}}
 
-Economics is a highly applicable field for utilization of time series analysis. The volume of data is abundant and inherently index with time. By using the time series statistical models, we can leverage historical data and catch trends and patterns for the data and make reasonable predictions.
+Economics is a highly applicable field for the utilization of time series analysis. The volume of data is abundant and inherently indexed with time. By using the time series statistical models, we can leverage historical data to catch trends and patterns for the data and make reasonable predictions.
 
 <<<<<<< HEAD
 \subsection{Consumer Price Index (CPI)}\label{consumer-price-index-cpi}
@@ -92,13 +97,13 @@ Our primary data sources includes critical economic indicators, including the un
 \hypertarget{related-research}{%
 \subsection{Related Research}\label{related-research}}
 
-One of the seminal paper in this field is by James H. Stock\autocite{STOCK1999293}. His research primarily centers around Phillips curve, which describes the connection of inflation and unemployment rate. In our own research, employment stands out as a crucial metrics that we analyze.
-In recent years, there are some researches \autocite{NGUYEN2023e20730} \autocite{BARKAN20231145} employing machine learning and deep neural network for the prediction. These models exists strong performance, particularly with large dataset and when forecasting extended timeframes. However, it is important to note that due to the nature of these complex machine learning models, they often lack interpretability or the ability to provide clear explanations for their predictions.
+One of the seminal papers in this field is by James H. Stock(Stock,2019). His research primarily centers around the Phillips curve, which describes the connection between inflation and the unemployment rate. In our own research, employment stands out as a crucial metric that we analyze.
+In recent years, there has been some research employing machine learning and deep neural networks for the prediction(Nguyen,2023;Barkan,2023). These models have strong performance, particularly with large datasets and when forecasting extended timeframes. However, it is important to note that due to the nature of these complex machine learning models, they often lack interpretability or the ability to provide clear explanations for their predictions.
 
 \hypertarget{data-sources-and-analysis-approach}{%
 \subsection{Data Sources and Analysis Approach}\label{data-sources-and-analysis-approach}}
 
-Our primary data sources includes critical economic indicators, including the unemployment rate, government expenditure, investment, and consumption. These indicators play a pivotal role in measuring the level of economic activity within the entity. Furthermore, in our analytical approach, we use lagged and transformed Consumer Purchasing Index values, in conjunction with time-related variables, to enrich the comprehensiveness and precision of our assessments. It's worth noting that all these data elements are aligned with our response variable and are collected on a monthly basis.
+Our primary data sources include critical economic indicators, including the unemployment rate, government expenditure, investment, and consumption. These indicators play a pivotal role in measuring the level of economic activity within the entity. Furthermore, in our analytical approach, we use lagged and transformed Consumer Purchasing Index values, in conjunction with time-related variables, to enrich the comprehensiveness and precision of our assessments. It's worth noting that all these data elements are aligned with our response variable and are collected on a monthly basis.
 
 \hypertarget{methods}{%
 \section{Methods}\label{methods}}
@@ -108,8 +113,8 @@ To address the problem at hand, we used the following three steps to analyze the
 \hypertarget{detrending}{%
 \subsection{Detrending}\label{detrending}}
 
-Observating the original data, the CPI has a significantly exponential trend. So we first use a exponential model to fit the data.
-Moreover, according to the nature of the CPI, which is highly related to inflation rate, and the avarage of inflation rate, we choose 1.05 as the base of the exponential model.
+Observing the original data, the CPI has a significantly exponential trend. So we first use an exponential model to fit the data.
+Moreover, according to the nature of the CPI, which is highly related to the inflation rate, and the average inflation rate, we choose 1.05 as the base of the exponential model.
 
 \includegraphics{stat429_group2_final_proj_files/figure-latex/unnamed-chunk-1-1.pdf}
 
@@ -120,25 +125,25 @@ Moreover, according to the nature of the CPI, which is highly related to inflati
 \subsection{Adding the economic variables}\label{adding-the-economic-variables}}
 >>>>>>> 5323b9808e290ccaec797f66c77be16cb3674278
 
-After the detrending and adding the first order lag of CPI, the time series of CPI, \(\{CPI(t)\}\), has became \(CPI(t) = T(t) + CPI(t-1) + Y_t\).
+After the detrending and adding the first order lag of CPI, the time series of CPI, \(\{CPI(t)\}\), has become \(CPI(t) = T(t) + CPI(t-1) + Y_t\).
 
 \includegraphics{stat429_group2_final_proj_files/figure-latex/unnamed-chunk-2-1.pdf}
 
-The plot above shows that \(Y_t\) still dose not behave like a white noise.
-Additionally, the significant depressions at 2008 and 2020 and the significant peak at 1979 reflexed the influence of the economic crisis\autocite{gross2019iran} \autocite{williams2010uncontrolled} \autocite{forbes_2019_strange_new_world}.
+The plot above shows that \(Y_t\) still does not behave like a white noise.
+Additionally, the significant depressions in 2008 and 2020 and the significant peak in 1979 reflected the influence of the economic crisis(Gross,2019;Williams,2010:Barone,2019).
 So we add some economic variables to the model to regress the final model.
 Also, we add the sine functions of time to the model to fit the seasonal effect of the business cycle.
 
-According to the nature of CPI \autocite{blanchard2004macroeconomics}, \(CPI(t) = \frac{\sum_{i \in \mathcal{P}} P_{i,t} Q_i}{\sum_{i \in \mathcal{P}} P_{i,0} Q_i}\), where \(\mathcal{P}\) is the set of all goods and services, \(P_{i,t}\) is the price of good or service \(i\) at time \(t\), and \(Q_i\) is the quantity of good or service \(i\) at the base period.
+According to the nature of CPI(Blanchard,2004), \(CPI(t) = \frac{\sum_{i \in \mathcal{P}} P_{i,t} Q_i}{\sum_{i \in \mathcal{P}} P_{i,0} Q_i}\), where \(\mathcal{P}\) is the set of all goods and services, \(P_{i,t}\) is the price of good or service \(i\) at time \(t\), and \(Q_i\) is the quantity of good or service \(i\) at the base period.
 Since the Wage-Setting Relation, \(W = \mathcal{A} P^e F(u,z)\), where \(W\) is the nominal wage, \(\mathcal{A}\) is the price mark-up, \(F(u,z)\) is the function of unemployment rate and other variables, \(u\) is the unemployment rate, and z is the output(GDP), and the Price-Setting Relation, \(P = (1+m)\frac{W}{\mathcal{A}}\), where \(m\) is the desired mark-up,
 it is concluded as
 \[CPI(t) = \frac{\sum_{i \in \mathcal{P}} (1+m_i) \frac{W_i}{\mathcal{A}} Q_i}{\sum_{i \in \mathcal{P}} P_{i,0} Q_i} = \frac{\sum_{i \in \mathcal{P}} (1+m_i) P_{i,t}^e F(u,z) Q_i}{\sum_{i \in \mathcal{P}} P_{i,0} Q_i}\].
 
-To simplify the formular, we assume \(m_i = m \,\, \forall i\) and \(P_{i,t}^e = P_{i,t-1}\), we get \(CPI(t) = CPI(t-1) (1+m) F(u,z)\).
+To simplify the formula, we assume \(m_i = m \,\, \forall i\) and \(P_{i,t}^e = P_{i,t-1}\), we get \(CPI(t) = CPI(t-1) (1+m) F(u,z)\).
 By the assumption of \(m\) is small and \(F(u,z) = 1 - \alpha u + \beta z\), we get \(CPI(t) = CPI(t-1) (1+m) (1 - \alpha u + \beta z)\) \(\cong CPI(t-1) ( 1 + m - \alpha u - \beta z)\).
 We could conclude \(CPI(t)=CPI(t-1)(1 + m - \alpha u + \beta z)\).
-For easy-computation, we assume CPI(t-1) is a constent we get \(CPI(t)=CPI_0(1 + m - \alpha u + \beta z)\).
-Therefore we add the unemployment rate, the real consumption, real grovement spending, and the real investment to the model.
+For easy-computation, we assume CPI(t-1) is a constant we get \(CPI(t)=CPI_0(1 + m - \alpha u + \beta z)\).
+Therefore we add the unemployment rate, the real consumption, real government spending, and the real investment to the model.
 
 Moreover, we add the sine functions of time to the model to fit the seasonal effect of the business cycle and the square of time to fit the trend of the CPI.
 
@@ -153,7 +158,7 @@ CPI(t) =& a_0 + a_1 \cdot 1.05^t  + a_2 (t-1959)^2 && (\text{trend})\\
 \includegraphics{stat429_group2_final_proj_files/figure-latex/unnamed-chunk-3-1.pdf}
 
 The plot above shows that residuals still dose not behave like a white noise.
-Therefore, we will use ACf to figure out weather or not the data has lags and improve our model.
+Therefore, we will use ACF to figure out weather or not the data has lags and improve our model.
 
 <<<<<<< HEAD
 \subsection{Lag Analysis}\label{lag-analysis}
@@ -162,10 +167,10 @@ Therefore, we will use ACf to figure out weather or not the data has lags and im
 \subsection{Lag Analysis}\label{lag-analysis}}
 >>>>>>> 5323b9808e290ccaec797f66c77be16cb3674278
 
-After conclude the first model, we use PACF to figure out weather or not the data has lags.
+After concluding the first model, we use PACF to figure out weather or not the data has lags.
 From the plot below, the data has one lags.
 Therefore, the CPI may be a AR(1) process
-and we improve our model by adding the first oreder lag of CPI to the model.
+and we improve our model by adding the first order lag of CPI to the model.
 
 \includegraphics{stat429_group2_final_proj_files/figure-latex/unnamed-chunk-4-1.pdf}
 
@@ -244,7 +249,7 @@ The graph above is the comparison between our model after adding the economic va
 
 \includegraphics{stat429_group2_final_proj_files/figure-latex/unnamed-chunk-7-1.pdf}
 
-To check our model, we perform an analysis of residuals to ensure that the CPI model's predictions are unbiased. We can find out the overall residuals plot shows the difference between predicted CPI values and the real CPI against time. Although a depression in 2010 and a relatively upward trend the 1960 to 1970 is noticeable, the residuals overall resemble white noise at other points, indicating a better fit of the model.\autocite{inflation1960-1970} The reason for the upward trend from 1960 to 1970 may be because of the robust consumer spending after World War II, the low unemployment rate, and Vietnam War spending. All these factors are included in the economic variables added to the model, therefore, these may be the reason for the upward trend. Also, for the noticeable depression before 2010, the reason may be the financial crisis in 2008\autocite{financial_crisis}. These are the cases that are worth the discussion in the future. Additionally, the partial autocorrelation function (PACF) plot demonstrates that the correlations of residuals largely fall within the confidence interval, affirming the CPI model is significant.
+To check our model, we perform an analysis of residuals to ensure that the CPI model's predictions are unbiased. We can find out the overall residuals plot shows the difference between predicted CPI values and the real CPI against time. Although a depression in 2010 and a relatively upward trend the 1960 to 1970 is noticeable, the residuals overall resemble white noise at other points, indicating a better fit of the model(Bryan,2013). The reason for the upward trend from 1960 to 1970 may be because of the robust consumer spending after World War II, the low unemployment rate, and Vietnam War spending. All these factors are included in the economic variables added to the model, therefore, these may be the reason for the upward trend. Also, for the noticeable depression before 2010, the reason may be the financial crisis in 2008(Blinder,2015). These are the cases that are worth the discussion in the future. Additionally, the partial autocorrelation function (PACF) plot demonstrates that the correlations of residuals largely fall within the confidence interval, affirming the CPI model is significant.
 
 \hypertarget{forecasting-results}{%
 \subsection{Forecasting Results}\label{forecasting-results}}
@@ -260,17 +265,81 @@ In conclusion, the model's statistical significance, accuracy in fitting histori
 \hypertarget{discussion}{%
 \section{Discussion}\label{discussion}}
 
-A synopsis of your findings and any limitations your study may suffer from.
+\hypertarget{main-summary-of-the-current-study}{%
+\subsection{Main summary of the current study}\label{main-summary-of-the-current-study}}
+
+By running a time series analysis on incorporated economic variables: unemployment rate, real consumption, real government spending, and real investment, it is evidently shown these economic variables are significant in predicting CPI. The model developed in this study to predict (Consumer Price Index)CPI is:
+
+\begin{align*}
+CPI(t) =& a_0 + a_1 \cdot 1.05^t + a_2 CPI(t-1)  && (\text{trend and lags})\\
+& + a_3 \sin\left(\frac{2\pi(t-1959)}{40}\right) + a_4 \sin\left(\frac{2\pi(t-1980)}{24}\right) + a_5 \sin\left(\frac{2\pi(t-1980)}{48}\right) && (\text{business cycle})\\
+& + b_1 C_t + b_2 u_t + b_3 G_t + b_4 I_t + W_t && (\text{economic variables})
+\end{align*}
+shows great accuracy in predicting CPI. This achieves the goal described above of finding a pattern of CPI, also the model provides clear interpretability by finding the most suitable coefficients, inspired and derived from economic theories for the model.
+
+\hypertarget{other-famous-research-or-academic-outcomes}{%
+\subsection{Other famous research or academic outcomes}\label{other-famous-research-or-academic-outcomes}}
+
+The model concluded by this study aligns with Keynesian economic theory(Corry,1986), which also concludes that government spending, unemployment, and other common factors play an important role in economic performance, reflected in inflation. The Milton Friedman's Monetarist critique also indicates the positive relationship between real consumption and inflation rate(Vaggi,2003). The conclusions of these two theories are consistent with the findings of this study.
+
+\hypertarget{flaws-in-the-current-study}{%
+\subsection{Flaws in the current study}\label{flaws-in-the-current-study}}
+
+The study lacks investigation into other common factors influencing CPI. For example, international trade dynamics or other economic unexpected events. The main method this study uses to conduct statistical analysis is time series analysis. However, it is possible the evolving economic factors' own nature overlooks the factor of time, resulting in an inappropriate method of conducting an investigation due to the evolving nature of economic factors. Another possible issue is the near-perfect R-squared value, which could possibly indicate the sign of overfitting, indicating a lack of generalization of unseen data.
+
+\hypertarget{suggestions-on-future-additional-future.}{%
+\subsection{Suggestions on future, additional future.}\label{suggestions-on-future-additional-future.}}
+
+The major suggestion is to continue investigating other economic factors, like international trade dynamics, and exchange rates, to have a deeper insight into how economic factors impact CPI. Based on the near-perfect R-squared value of this study, the model could apply regularization techniques to detect and prevent the problem of overfitting. By the nature of economic variables, the future study could take a deeper look into some unexpected events and apply the developed model, too, which could validate the model's effectiveness. These suggestions will help build a more solid understanding of CPI.
 
 \newpage
 
 \hypertarget{references}{%
 \section{References}\label{references}}
 
-\hypertarget{appendix-optional}{%
-\section{Appendix (Optional)}\label{appendix-optional}}
+\begin{hangparas}{4em}{1}
+\noindent Barkan, O., Benchimol, J., Caspi, I., Cohen, E., Hammer, A., \& Koenigstein, N. (2023). Forecasting CPI inflation components with Hierarchical Recurrent Neural Networks. International Journal of Forecasting, 39(3), 1145-1162. https://doi.org/10.1016/j.ijforecast.2022.04.009 \newline
+\end{hangparas}
 
-Any R codes or less important R outputs that you wanted to keep- can go in here.
+\begin{hangparas}{4em}{1}
+\noindent Barone, R. (2019). A Strange New World: Economic Slowdown, Liquidity Issues. Retrieved from https://www.forbes.com/sites/greatspeculations/2019/09/22/a-strange-new-world-economic-slowdown-liquidity-issues/?sh=4b97f34b89ff \newline
+\end{hangparas}
+
+\begin{hangparas}{4em}{1}
+\noindent Blanchard, O. J., \& Sheen, J. R. (2004). Macroeconomics. Pearson Education.\newline
+\end{hangparas}
+
+\begin{hangparas}{4em}{1}
+\noindent Blinder, A. S., \& Zandi, M. (2015). The Financial Crisis: Lessons for the Next One. Retrieved from https://www.cbpp.org/research/the-financial-crisis-lessons-for-the-next-one \newline
+\end{hangparas}
+
+\begin{hangparas}{4em}{1}
+\noindent Bryan, M. (2013). The Great Inflation. Retrieved from https://www.federalreservehistory.org/essays/great-inflation \newline
+\end{hangparas}
+
+\begin{hangparas}{4em}{1}
+\noindent Corry, B. (1986). Keynes's Economics: A Revolution in Economic Theory or in Economic Policy? In R. D. Collison Black (Ed.), Keynes's Economics. Palgrave Macmillan UK.\newline
+\end{hangparas}
+
+\begin{hangparas}{4em}{1}
+\noindent Gross, S. (2019). What Iran's 1979 revolution meant for US and global oil markets. Retrieved March 2019, from https://www.brookings.edu/articles/what-irans-1979-revolution-meant-for-us-and-global-oil-markets/ \newline
+\end{hangparas}
+
+\begin{hangparas}{4em}{1}
+\noindent Nguyen, T.-T., Nguyen, H.-G., Lee, J.-Y., Wang, Y.-L., \& Tsai, C.-S. (2023). The consumer price index prediction using machine learning approaches: Evidence from the United States. Heliyon, 9(10), Article e20730. https://doi.org/10.1016/j.heliyon.2023.e20730 \newline
+\end{hangparas}
+
+\begin{hangparas}{4em}{1}
+\noindent Stock, J. H., \& Watson, M. W. (1999). Forecasting inflation. Journal of Monetary Economics, 44(2), 293-335. https://doi.org/10.1016/S0304-3932(99)00027-6 \newline
+\end{hangparas}
+
+\begin{hangparas}{4em}{1}
+\noindent Vaggi, G., \& Groenewegen, P. (2003). Milton Friedman (1912--): Monetarism and its Critics. In Milton Friedman. Palgrave Macmillan UK.\newline
+\end{hangparas}
+
+\begin{hangparas}{4em}{1}
+\noindent Williams, M. (2010). Uncontrolled Risk: Lessons of Lehman Brothers and How Systemic Risk Can Still Bring Down the World Financial System. McGraw Hill LLC.\newline
+\end{hangparas}
 
 
 \printbibliography
