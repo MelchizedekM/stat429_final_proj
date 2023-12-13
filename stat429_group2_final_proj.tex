@@ -87,7 +87,7 @@ Our primary data sources include critical economic indicators, including the une
 
 \section{Methods}\label{methods}
 
-To address the problem at hand, we used the following three steps to analyze the data: 1. detrending, 2. lag analysis, 3. adding the economic variables.
+To address the problem at hand, we used the following three steps to analyze the data: 1. detrending, 2. adding the economic variables, 3. lag analysis.
 
 \subsection{Detrending}\label{detrending}
 
@@ -148,7 +148,7 @@ To summarize the second model, we get the final model as follows:
 
 \begin{align*}
 CPI(t) =& a_0 + a_1 \cdot 1.05^t + a_2 CPI(t-1)  && (\text{trend and lags})\\
-& + a_3 \sin\left(\frac{2\pi(t-1959)}{40}\right) + a_4 \sin\left(\frac{2\pi(t-1980)}{24}\right) a_5 \sin\left(\frac{2\pi(t-1980)}{48}\right)  && (\text{business cycle})\\
+& + a_3 \sin\left(\frac{2\pi(t-1959)}{40}\right) + a_4 \sin\left(\frac{2\pi(t-1980)}{24}\right) + a_5 \sin\left(\frac{2\pi(t-1980)}{48}\right)  && (\text{business cycle})\\
 & + b_1 C_t + b_2 u_t + b_3 G_t + b_4 I_t + W_t && (\text{economic variables})
 \end{align*}
 
