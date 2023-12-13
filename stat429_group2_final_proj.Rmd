@@ -175,7 +175,7 @@ In recent years, there has been some research employing machine learning and dee
 Our primary data sources include critical economic indicators, including the unemployment rate, government expenditure, investment, and consumption. These indicators play a pivotal role in measuring the level of economic activity within the entity. Furthermore, in our analytical approach, we use lagged and transformed Consumer Purchasing Index values, in conjunction with time-related variables, to enrich the comprehensiveness and precision of our assessments. It's worth noting that all these data elements are aligned with our response variable and are collected on a monthly basis.
 
 # Methods
-To address the problem at hand, we used the following three steps to analyze the data: 1. detrending, 2. lag analysis, 3. adding the economic variables.
+To address the problem at hand, we used the following three steps to analyze the data: 1. detrending, 2. adding the economic variables, 3. lag analysis.
 
 ## Detrending 
 Observing the original data, the CPI has a significantly exponential trend. So we first use an exponential model to fit the data. 
@@ -258,7 +258,7 @@ To summarize the second model, we get the final model as follows:
 
 \begin{align*}
 CPI(t) =& a_0 + a_1 \cdot 1.05^t + a_2 CPI(t-1)  && (\text{trend and lags})\\
-& + a_3 \sin\left(\frac{2\pi(t-1959)}{40}\right) + a_4 \sin\left(\frac{2\pi(t-1980)}{24}\right) a_5 \sin\left(\frac{2\pi(t-1980)}{48}\right)  && (\text{business cycle})\\
+& + a_3 \sin\left(\frac{2\pi(t-1959)}{40}\right) + a_4 \sin\left(\frac{2\pi(t-1980)}{24}\right) + a_5 \sin\left(\frac{2\pi(t-1980)}{48}\right)  && (\text{business cycle})\\
 & + b_1 C_t + b_2 u_t + b_3 G_t + b_4 I_t + W_t && (\text{economic variables})
 \end{align*}
 
