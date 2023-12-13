@@ -192,11 +192,11 @@ lines(train$t, predict(detrend_model), col = "red")
 
 ## Adding the economic variables
 
-After the detrending and adding the first order lag of CPI, the time series of CPI, $\{CPI(t)\}$, has become $CPI(t) = T(t) + CPI(t-1) + Y_t$.
+After the detrending, the time series of CPI, $\{CPI(t)\}$, has become $CPI(t) = T(t) + Y_t$.
 
 ```{r, echo=FALSE,results='hide'}
 par(mfrow = c(1, 2))
-model_1 <- lm(CPI ~ I(1.05^t) + CPI_lag1, data = train)
+model_1 <- lm(CPI ~ I(1.05^t), data = train)
 plot(model_1$residuals ~ t, data = train, col = 'black' , type = 'l', main = "Y_t vs. Time", xlab="Time", ylab="Y_t")
 plot(model_1$residuals/train[,'CPI'] ~ t, data = train, col = 'black' , type = 'l', main = "Y_t/CPI vs. Time", xlab="Time", ylab="Y_t/CPI")
 ```
@@ -225,7 +225,7 @@ To summarize the first model, we get the model as follows:
 
 \begin{align*}
 CPI(t) =& a_0 + a_1 \cdot 1.05^t  + a_2 (t-1959)^2 && (\text{trend})\\
-& + a_3 \sin\left(\frac{2\pi(t-1959)}{40}\right) + a_4 \sin\left(\frac{2\pi(t-1980)}{24}\right) + a_5 \sin\left(\frac{2\pi(t-1980)}{48}\right) && (\text{business cycle})\\
+& + a_3 \sin\left(\frac{2\pi(t-1959)}{40}\right) + a_4 \sin\left(\frac{2\pi(t-1980)}{24}\right) + && (\text{business cycle})\\
 & + b_1 C_t + b_2 u_t + b_3 G_t + b_4 I_t + W_t && (\text{economic variables})
 \end{align*}
 
@@ -258,7 +258,7 @@ To summarize the second model, we get the final model as follows:
 
 \begin{align*}
 CPI(t) =& a_0 + a_1 \cdot 1.05^t + a_2 CPI(t-1)  && (\text{trend and lags})\\
-& + a_3 \sin\left(\frac{2\pi(t-1959)}{40}\right) + a_4 \sin\left(\frac{2\pi(t-1980)}{24}\right) + a_5 \sin\left(\frac{2\pi(t-1980)}{48}\right) && (\text{business cycle})\\
+& + a_3 \sin\left(\frac{2\pi(t-1959)}{40}\right) + a_4 \sin\left(\frac{2\pi(t-1980)}{24}\right) a_5 \sin\left(\frac{2\pi(t-1980)}{48}\right)  && (\text{business cycle})\\
 & + b_1 C_t + b_2 u_t + b_3 G_t + b_4 I_t + W_t && (\text{economic variables})
 \end{align*}
 
